@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Donation</title>
+    <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'">
+    <div th:if="${session.userName} != null">
+        <p th:text="'Inloggad som: ' + ${session.userName}"></p>
+    </div>
+    <div th:if="${session.userName} == null">
+        <form th:action="@{/login}" method="post">
+            <input type="submit" value="Logga in"/>
+        </form>
+    </div>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Logga ut"/>
+    </form>
+    <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'">
+</head>
+<body>
+
+<header>
+    <table>
+        <thead>
+        <th><a href="/organisations">Våra Organisationer</a></th>
+        <th><a href="/donation">Donera</a></th>
+        <th><a href="/SignUp">Bli Medlem</a></th>
+        <th><a href="/">Om Oss</a></th>
+        <th><a href="/myPage">Mina Sidor</a></th>
+        <th><a href="/login">Login</a></th>
+        </thead>
+    </table>
+</header>
+
+<form action="/donation" method="POST">
+    Summa att donera: <input type="number" name="sum">
+    <div th:each="organisation : ${organisations}">
+        <div>
+            <input type="checkbox" th:id="${organisation.id}" name="organisations" th:value="${organisation.id}">
+            <label th:for="${organisation.id}" th:text="${organisation.name}"></label>
+        </div>
+    </div>
+    <input type="submit" value="Donera">
+</form>
+
+</body>
+</html>

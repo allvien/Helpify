@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>MyPage</title>
+    <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'">
+    <form action="http://localhost:8080/organisations">
+        <input type="submit" value="Till våra organisationer" /> </form>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Logga ut"/>
+    </form>
+
+</head>
+<body>
+<header>
+    <table>
+        <thead>
+        <th><a href="/organisations">Våra Organisationer</a></th>
+        <th><a href="/donation">Donera</a></th>
+        <th><a href="/SignUp">Bli Medlem</a></th>
+        <th><a href="/">Om Oss</a></th>
+        <th><a href="/myPage">Mina Sidor</a></th>
+        <th><a href="/login">Login</a></th>
+        </thead>
+    </table>
+</header>
+
+<div class="content">
+
+    <h1 th:text="'Välkommen ' + ${session.userName}"></h1>
+
+    <form action="/SignUp"  method="post" th:object="${user}">
+        Användarnamn: <input type="text" th:field="*{userName}"/>
+        Förnamn: <input type="text" th:field="*{firstName}"/>
+        Efternamn: <input type="text" th:field="*{lastName}"/>
+        Email adress: <input type="text" th:field="*{email}"/>
+        Password: <input type="Password" th:field="*{password}"/>
+        <input type="submit" value="Spara">
+    </form>
+    <input th:if="${id != null}" type="hidden" th:field="*{id}"/>
+
+        <form action="@{/organisation}" method="post">
+            <input type="submit" value="Till organisationerna" />
+        </form>
+
+</div>
+</body>
+</html>

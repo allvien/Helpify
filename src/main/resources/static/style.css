@@ -1,0 +1,279 @@
+
+body {
+background: url('/images/HELPIFYGRAD.png');
+background-position: center;
+color: black;
+background-color: #D6E9F0;
+font-size: 20px;
+font-family: Arial;
+}
+
+ h1 {
+ font-size: 30px;
+ color: white;
+ font-family: Arial;}
+ border-bottom-style: solid;
+
+h2 {
+ font-size: 15px;
+ color: white;
+ font-family: Arial;
+ }
+
+h3 {
+font-size: 20px;
+color: white;
+font-family: Arial;
+ }
+
+.header1 {
+  background: url('/images/HELPIFYAVL.png');
+  background-color: #D6E9F0;
+  height: 380px;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.header-text {
+  text-align: center;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.container{
+flex-direction:row;
+flex-wrap: wrap;
+justify-content: flex-start;
+place-content: center start;
+image: auto;
+
+}
+
+.organisation
+.organisationTop{
+font-size: 80px;
+color: white;
+
+.startOrg h2 {
+font-size: 20px;
+}
+
+a:link {
+color:rgb(47, 16, 133);
+background-color: mintcream;}
+
+
+a:visited {
+color:rgb(47, 16, 133);
+background-color: mintcream;
+
+}
+
+a:hover {
+color:rgb(47, 16, 133);
+background-color: mintcream;
+
+}
+
+a:active {
+color:rgb(47, 16, 133);
+background-color: mintcream;
+
+}
+
+
+
+/*
+Color scheme:
+    Blue: #3190B5
+    Dark blue: #0E2A36      (e.g. navbar)
+    Light blue: #D6E9F0     (e.g. background)
+    Green: #257D5E          (e.g. logo)
+    Yellow: #FFDD5C         (e.g. for alerts)
+*/
+
+
+
+.hide {
+    visibility: hidden;
+}
+/*
+.logo {
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+margin-right:200px;
+}
+
+}
+.picture {
+
+width: 350px;
+height: 200px;
+
+}
+
+
+
+
+ Three image containers (use 25% for four, and 50% for two, etc)
+.column {
+  float: left;
+  width: 30%;
+  padding: 5px;
+}
+
+Clear floats after image containers
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+*/
+
+
+
+/***** Styling for all pages *****/
+/*
+body {
+    background-color: #D6E9F0;
+}
+
+/* Header /*
+.jumbotron {
+    background-color: #D6E9F0;
+    /* Remove the jumbotron's default bottom margin
+    margin-bottom: 0;
+}
+/*
+.jumbotron img {
+    cursor: pointer;
+}*/
+
+/* Navbar */ /*
+.navbar {
+    background-color: #0E2A36;
+    /* Remove the navbar's default rounded borders and increase the bottom margin */
+   /*  margin-bottom: 50px;
+    border-radius: 0;
+}
+
+#navbarlogo {
+    width: 50px;
+    cursor: pointer;
+}
+*/
+/* Footer */ /*
+footer {
+    background-color: #D6E9F0;
+    padding: 25px;
+}
+
+#footerbtn {
+    /* Button for newsletter sign-up in the footer
+    background-color: #FFDD5C;
+    border-color: #FFDD5C;
+    color: #0E2A36
+}
+*/
+
+
+/***** Styling for frontpage *****/
+
+/* Product counter (cartsymbol)
+.productcounter {
+    color: #FFDD5C;
+    position: absolute;
+    top: -1;
+}
+ */
+/* Carousel
+#myCarousel {
+    padding: 10px;
+}
+
+.carousel-inner .item img {
+    height: 400px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+ */
+/* Product listing
+.btn-primary {
+    background-color: #257D5E;
+    border-color: #257D5E;
+
+}
+
+.btn-primary:hover {
+    background-color:  #0E2A36;
+    color:  #fff;
+}
+
+.panel-primary {
+    /* Background for panel
+    border-color: #257D5E;
+}
+
+.panel-primary:hover {
+    border-color:  #0E2A36;
+}
+
+.panel-primary>.panel-heading {
+    background-color: #257D5E;
+    cursor: pointer;
+}
+
+.panel-primary>.panel-heading:hover {
+    background-color:  #0E2A36;
+               color:  white;
+}
+
+.img {
+    padding: 50px;
+    background-color: green;
+    transition: transform .2s; /* Animation
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.panel img:hover {
+    /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport)
+    transform: scale(1.2);
+}
+
+#productimg {
+    /* Centers the product image and gives all product images the same height
+    padding: 10px;
+    margin: 0 auto;
+    height: 250px;
+    cursor: pointer;
+}
+*/
+
+
+/***** Styling for product page *****/
+/*
+#buybtn{
+    background-color: #3190B5;
+}
+
+#large-productimg {
+    width:100%;
+}
+
+
+#treeimg{
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */

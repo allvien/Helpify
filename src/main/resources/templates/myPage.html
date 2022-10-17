@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title> Mina sidor </title>
+    <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'">
+    <p th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p>
+</head>
+<body>
+<header>
+    <table>
+        <thead>
+        <th><a href="/">Start</a></th>
+        <th><a href="/organisations">Våra Organisationer</a></th>
+        <th><a href="/donation">Donera</a></th>
+        </thead>
+    </table>
+</header>
+<div class="sidebar">
+<div class="logo-details">
+    <i class='bx bxl-c-plus-plus'></i>
+
+</div>
+<ul class="nav-links">
+    <li>
+        <a href="localhost:8080/donation">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">Mina donationer</span>
+        </a>
+    </li>
+    <li>
+        <a href="#">
+            <i class='localhost:8080/edit' ></i>
+            <span class="links_name">Inställningar</span>
+        </a>
+    </li>
+    <li class="localhost:8080/startpage">
+        <a href="#">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Logga ut</span>
+        </a>
+    </li>
+</ul>
+</div>
+
+</script>
+<h2> </h2>
+
+<p> Vi vill ta en stund för att tacka just Dig (lägg in session.userName för att du är medlem hos oss! För varje månad som du är medlem hos oss </br>
+så bidrar du till att skapa en bättre och friskare värld för både människor som djur och natur.  </p>
+
+
+<div class="row">
+    <div class="column">
+        <img src="https://tfiglobalnews.com/wp-content/uploads/2021/07/sasadgdG-1024x576.jpg" alt="Människorätt" style="width:100%">
+    </div>
+    <div class="column">
+        <img src="http://ipfactly.com/wp-content/uploads/2015/01/Standing_jaguar1.jpg" alt="Djur och natur" style="width:100%">
+    </div>
+    <div class="column">
+        <img src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-760w,f_auto,q_auto:best/rockcms/2022-02/covid-seattle-childrens-hospital-mc-inline-220202-03-ac61cd.jpg" alt="Läkemedelsforskning" style="width:100%">
+    </div>
+</div>
+
+</body>
+</html>

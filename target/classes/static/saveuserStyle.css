@@ -1,0 +1,50 @@
+body {
+background-image: url('/images/HELPIFYAVL.png');
+background-color:#D6E9F0;
+color: black;
+font-size: 20px;
+font-family: Arial;
+}
+
+.startOrg,
+.organisation
+.startOrg h1 {
+
+font-size: 80px;
+
+.startOrg h2 {
+font-size: 20px;
+}
+
+a:link {
+color:rgb(47, 16, 133);
+background-color: mintcream;}
+
+
+a:visited {
+color:rgb(47, 16, 133);
+background-color: mintcream;
+
+}
+
+a:hover {
+color:rgb(47, 16, 133);
+background-color: mintcream;
+
+}
+
+a:active {
+color:rgb(47, 16, 133);
+background-color: mintcream;
+
+}
+
+
+/*
+Color scheme:
+    Blue: #3190B5
+    Dark blue: #0E2A36      (e.g. navbar)
+    Light blue: #D6E9F0     (e.g. background)
+    Green: #257D5E          (e.g. logo)
+    Yellow: #FFDD5C         (e.g. for alerts)
+*/
