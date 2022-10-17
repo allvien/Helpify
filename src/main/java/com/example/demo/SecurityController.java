@@ -78,6 +78,14 @@ public class SecurityController {
                 session.setAttribute("password", user.getPassword());
             }
         } */
+        String userName = request.getRemoteUser();
+        if (userName == null) {
+            return "login";
+        }
+        User user = userRepo.findByUserName(userName);
+
+        model.addAttribute("user", user);
+
         return "myPage";
 
     }
