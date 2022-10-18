@@ -5,10 +5,8 @@
     <title>StartPage</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 <!--
 <div class="jumbotron">
@@ -21,7 +19,7 @@
         <div class="header-text">
             <thead>
             <h1 style="font-size:80px">HELPIFY</h1>
-            <th><a href="/SignUp">Bli Medlem</a></th>
+            <th><a href="/signup">Bli Medlem</a></th>
             <th><a href="/organisations">Våra organisationer</a></th>
             <th><a href="/donera">Donera</a></th>
             <thdiv class="dropdown">
@@ -40,10 +38,6 @@
         </div>
     </div>
 </header>
-
-<!--<p th:if="${httpServletRequest.remoteUser != null}">-->
-<p th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p>
-<!--</p>-->
 
 <article>
     <h1>Välkommen till HelpIfy</h1>
