@@ -40,7 +40,7 @@
 
     <h1 th:text="'Välkommen ' + ${session.userName}"></h1>
 
-    <form action="/SignUp"  method="post" th:object="${user}">
+    <form action="/signup"  method="post" th:object="${user}">
         Användarnamn: <input type="text" th:field="*{userName}"/>
         Förnamn: <input type="text" th:field="*{firstName}"/>
         Efternamn: <input type="text" th:field="*{lastName}"/>

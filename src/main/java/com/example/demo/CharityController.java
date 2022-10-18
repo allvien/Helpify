@@ -68,10 +68,6 @@ public class CharityController {
     public String donationPost(@RequestParam double sum, @RequestParam String[] organisations, Model model, HttpServletRequest request, HttpSession session) {
 
         String userName = request.getRemoteUser();
-        if (userName == null) {
-            return "login";
-        }
-
         donationService.splitDonation(sum, organisations, userName);
 
         model.addAttribute("totalSum", donationService.addToTotal());

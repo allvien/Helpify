@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title> Mina sidor </title>
-    <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'">
-    <p th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p>
+   <!-- <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'">
+    <p th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p> -->
 </head>
 <body>
 
@@ -31,30 +31,30 @@
 </header>
 <!--
 <div class="sidebar">
-<div class="logo-details">
-    <i class='bx bxl-c-plus-plus'></i>
+    <div class="logo-details">
+        <i class='bx bxl-c-plus-plus'></i>
 
-</div>
-<ul class="nav-links">
-    <li>
-        <a href="localhost:8080/donation">
-            <i class='bx bx-box' ></i>
-            <span class="links_name">Mina donationer</span>
-        </a>
-    </li>
-    <li>
-        <a href="#">
-            <i class='localhost:8080/edit' ></i>
-            <span class="links_name">Inställningar</span>
-        </a>
-    </li>
-    <li class="localhost:8080/startpage">
-        <a href="#">
-            <i class='bx bx-log-out'></i>
-            <span class="links_name">Logga ut</span>
-        </a>
-    </li>
-</ul>
+    </div>
+    <ul class="nav-links">
+        <li>
+            <a href="localhost:8080/donation">
+                <i class='bx bx-box'></i>
+                <span class="links_name">Mina donationer</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class='localhost:8080/edit'></i>
+                <span class="links_name">Inställningar</span>
+            </a>
+        </li>
+        <li class="localhost:8080/startpage">
+            <a href="#">
+                <i class='bx bx-log-out'></i>
+                <span class="links_name">Logga ut</span>
+            </a>
+        </li>
+    </ul>
 </div>
 
 </script>
@@ -75,6 +75,22 @@
         <img class="picture1" src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-760w,f_auto,q_auto:best/rockcms/2022-02/covid-seattle-childrens-hospital-mc-inline-220202-03-ac61cd.jpg" alt="Läkemedelsforskning" style="width:100%">
     </div>
 </div>
+<h3>Dina donationer:</h3>
+<form th:object="${user}" th:if="${noDonation}"><p th:text="${'du har inga donationer registrerade'}"></p>/>
+    <table>
+        <tbody>
+        <tr>
+            <th>Organisation</th>
+            <th>summa</th>
+        </tr>
+
+        <tr th:each="donation: ${user.donations}">
+            <td th:text="${donation.organisation.name}"></td>
+            <td th:text="${donation.sum} + 'sek'"></td>
+        </tr>
+        </tbody>
+    </table>
+</form>
 
 <footer class="site-footer">
     <div class="container">

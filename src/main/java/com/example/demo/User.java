@@ -25,7 +25,7 @@ public class User {
     @Column(name="LASTNAME")
     private String lastName;
     @Size(min=6)
-    @Column(name="PASSWORD", length = 64)
+    @Column(name="PASSWORD")
     private String password;
     @Email
     @Column(name="EMAIL")

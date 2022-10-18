@@ -11,6 +11,8 @@ INSERT INTO ORGANISATION (NAME, DESCRIPTION, CATEGORY) VALUES ('UNICEF', 'UNICEF
 INSERT INTO ORGANISATION (NAME, DESCRIPTION, CATEGORY) VALUES ('PLANINTERNATIONAL', 'Alla barn ska få möjlighet till en långsiktig positiv utveckling, i en trygg miljö där deras rättigheter är tillgodosedda. Plan International arbetar på uppdrag av barn och utgår alltid från deras behov. Deras arbete har ett särskilt fokus på flickor eftersom världen inte är jämställd och de hör till en av de mest diskriminerade grupperna i världen.', 'MÄNNISKORÄTT');
 
 INSERT INTO USERS (USERNAME, FIRSTNAME, LASTNAME, PASSWORD, EMAIL, ISADMIN) VALUES ('qweqwe', 'Janne', 'Karlsson', '$2a$11$uNaUs.AJSO2BxUGYdWFAwOjgjRArzVDMEvI9ZAJEKL1P6dkf5D.We', 'qwe@asd.se', true);
+INSERT INTO USERS (USERNAME, FIRSTNAME, LASTNAME, PASSWORD, EMAIL, ISADMIN) VALUES ('yasaman', 'yas', 'moj', '$2a$11$z6HcVSREwk4dsWMhO6MwYO/1MQD9z6LzcmdN/rhimnaC6RtMVDNje', 'mojan@gmail.se', false);
+
 
 INSERT INTO DONATION (SUM, USER_ID) VALUES (300000, 1);
 
