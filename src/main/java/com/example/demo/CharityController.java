@@ -61,7 +61,7 @@ public class CharityController {
     }
 
     @GetMapping("/donation")
-    public String donation(Model model, HttpSession session) {
+    public String donation(Model model, HttpSession session, HttpServletRequest request) {
         List<Organisation> organisations = (List<Organisation>) orgRepo.findAll();
         model.addAttribute("organisations", organisations);
         return "donation";
@@ -69,12 +69,7 @@ public class CharityController {
 
     @PostMapping("/donation")
     public String donationPost(@RequestParam double sum, @RequestParam String[] organisations, Model model, HttpServletRequest request, HttpSession session) {
-
         String userName = request.getRemoteUser();
-        if (userName == null) {
-            return "login";
-        }
-
         donationService.splitDonation(sum, organisations, userName);
 
         model.addAttribute("totalSum", donationService.addToTotal());

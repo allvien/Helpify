@@ -24,30 +24,28 @@
 </header>
 
 <form th:action="@{/SignUp}" method="post" th:object="${user}">
-    <p th:if="${#fields.hasErrors('userName')}">Inkorrekt användarnamn!</p>
-    Användarnamn : <input type="text" th:field="*{userName}" th:errorclass="error"/>
+    <p th:if="${#fields.hasErrors('firstName')}">Förnamn är inte ifyllt</p>
+    <label for="firstName">Förnamn</label>
+    <input type="text" th:field="*{firstName}" th:errorclass="error" id="firstName"/>
 
-    <p th:if="${#fields.hasErrors('firstName')}">Inkorrekt namn</p>
-    Förnamn : <input type="text" th:field="*{firstName}" th:errorclass="error"/>
+    <p th:if="${#fields.hasErrors('lastName')}">Efternamn är inte ifyllt</p>
+    <label for="lastName">Efternamn</label>
+    <input type="text" th:field="*{lastName}"th:errorclass="error" id="lastName"/>
 
-    <p th:if="${#fields.hasErrors('lastName')}">Inkorrekt efternamn</p>
-    Efternamn: <input type="text" th:field="*{lastName}"th:errorclass="error"/>
+    <p th:if="${#fields.hasErrors('email')}">Inkorrekt email</p>
+    <label for="email">Email</label>
+    <input type="email" th:field="*{email}" th:errorclass="error" id="email"/>
 
-    <p th:if="${#fields.hasErrors('email')}">Inkorrekt email!</p>
-    Email address: <input type="email" th:field="*{email}" th:errorclass="error"/>
+    <p th:if="${#fields.hasErrors('userName')}">Användarnamnet ska vara mellan 4-12 bokstäver</p>
+    <label for="userName">Användarnamn</label>
+    <input type="text" th:field="*{userName}" th:errorclass="error" id="userName"/>
 
-    <p th:if="${#fields.hasErrors('password')}">Incorrect value in password!</p>
-    Lösenord: <input type="password" th:field="*{password}" th:errorclass="error"/>
+    <p th:if="${#fields.hasErrors('password')}">Lösenordet ska vara minst 6 tecken</p>
+    <label for="password">Lösenord</label>
+    <input type="password" th:field="*{password}" th:errorclass="error" id="password"/>
 
-    <!--<input th:if="${id != null}" type="hidden" th:field="*{id}"/>-->
-    <input type="submit" value="Spara Medlem"/>
 
-    <!--<div th:if="${id != null}">-->
-    <div>
-        Klicka
-        <a href="/login">här</a>
-        för att logga in
-    </div>
+    <input type="submit" value="Spara"/>
 
 
 </form>
