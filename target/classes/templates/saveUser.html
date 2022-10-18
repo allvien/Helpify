@@ -33,7 +33,7 @@
     </div>
 </header>
 
-<form th:action="@{/signup}" method="post" th:object="${user}">
+<form th:action="@{/SignUp}" method="post" th:object="${user}">
     <p th:if="${#fields.hasErrors('firstName')}">Förnamn är inte ifyllt</p>
     <label for="firstName">Förnamn</label>
     <input type="text" th:field="*{firstName}" th:errorclass="error" id="firstName"/>
