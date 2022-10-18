@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'">
 </head>
 <body>
+
 <header>
     <div class="header1">
         <div class="header-text">
@@ -43,14 +44,15 @@
 </header>
 
 <form action="/donation" method="POST">
-    Summa att donera: <input type="number" name="sum">
+    Summa att donera: <input type="number" name="sum" class="donateSum" oninput="buttonHide()" >
     <div th:each="organisation : ${organisations}">
         <div>
-            <input type="checkbox" th:id="${organisation.id}" name="organisations" th:value="${organisation.id}">
+            <input type="checkbox" th:id="${organisation.id}" name="organisations"
+                   class="donationCheck" onchange="buttonHide()" th:value="${organisation.id}">
             <label th:for="${organisation.id}" th:text="${organisation.name}"></label>
         </div>
     </div>
-    <input type="submit" value="Donera">
+    <input type="submit" class="donateButton" value="Donera" disabled>
 </form>
 <footer class="site-footer">
     <div class="container">
@@ -63,5 +65,7 @@
         </div>
     </div>
 </footer>
+
+<script src="/images/script.js"></script>
 </body>
 </html>
