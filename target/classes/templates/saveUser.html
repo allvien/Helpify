@@ -11,19 +11,29 @@
 </head>
 <body>
 <header>
-    <table>
-        <thead>
-        <th><a href="/organisations">Våra Organisationer</a></th>
-        <th><a href="/donation">Donera</a></th>
-        <th><a href="/signup">Bli Medlem</a></th>
-        <th><a href="/">Om Oss</a></th>
-        <th><a href="/myPage">Mina Sidor</a></th>
-        <th><a href="/login">Login</a></th>
-        </thead>
-    </table>
+    <div class="header1">
+        <div class="header-text">
+            <thead>
+            <h1 style="font-size:80px">HELPIFY</h1>
+            <th><a href="/startPage">Startsida</a></th>
+            <th class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle" href="/myPage" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Mina sidor</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/myPage">Mina sidor</a></li>
+                    <li><a class="dropdown-item" href="/stats">Mina donationer</a></li>
+                    <li><a class="dropdown-item" href="/Inställningar">Inställningar</a></li>
+                </ul>
+            </th>
+            <th><a href="/login">Logga in</a></th>
+            <th><a href="/logout">Logga ut</a></th>
+            <th><p th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p></th>
+            </thead>
+        </div>
+    </div>
 </header>
 
-<form th:action="@{/signup}" method="post" th:object="${user}">
+<form th:action="@{/SignUp}" method="post" th:object="${user}">
     <p th:if="${#fields.hasErrors('firstName')}">Förnamn är inte ifyllt</p>
     <label for="firstName">Förnamn</label>
     <input type="text" th:field="*{firstName}" th:errorclass="error" id="firstName"/>
@@ -49,5 +59,17 @@
 
 
 </form>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+                <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by
+                    <a href="#">Helpify </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
