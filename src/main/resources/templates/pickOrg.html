@@ -30,7 +30,7 @@
             </thdiv>
             <th><a href="/login">Logga in</a></th>
             <th><a href="/logout">Logga ut</a></th>
-            <th><p th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p></th>
+            <th><p th:if="${#httpServletRequest.remoteUser}" th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p></th>
             </thead>
         </div>
     </div>
