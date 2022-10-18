@@ -12,29 +12,37 @@ font-family: Arial;
 }
 
  h1 {
+ text-align: center;
  font-size: 30px;
- color: #0E2A36;
- font-family: Luminari;}
- border-bottom-style: solid;
+ color: #004369;
+ font-family: Luminari;
+
+}
 
 h2 {
-
  font-size: 30px;
- color: #0E2A36;
+ color: #004369;
  font-family: Arial;
  text-align: center;
  }
 
 h3 {
-font-size: 15px;
+font-size: 10px;
 color: #0E2A36;
 font-family: Arial;
 text-align: center;
  }
 
- p {
+ h4 {
  font-size: 15px;
  color: #0E2A36;
+ font-family: Arial;
+ text-align: center;
+ }
+
+ p {
+ font-size: 15px;
+ color: white;
  font-family: Arial;
  text-align: center;
  }
@@ -61,19 +69,26 @@ text-align: center;
   transform: translate(-50%, -50%);
   color: white;
 }
+ .header-text hStyle {
+ color: white;
+ }
+
 .header1 header-text dropdown {
-border: no border;
-background-color: #a7d2dd;
+
 }
 
 .container{
-flex-direction:row;
-flex-wrap: wrap;
+
 place-content: left start;
 image: auto;
 text-align: justify;
 
 }
+/*
+.container row col {
+border: 5px solid #004369;
+} */
+
 .picture {
 width: 350px;
 height: 200px;
@@ -129,7 +144,7 @@ footer {
 #footerbtn {
     /* Button for newsletter sign-up in the footer*/
     background-color: #a7d2dd;
-    border-color: #FFDD5C;
+
     color: #0E2A36;
     text-align: center;
 }

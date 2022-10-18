@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <title>Spara användare</title>
     <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'">
-    <p th:text="'Inloggad som: ' + ${session.userName}"></p>
+  <!--  <p th:text="'Inloggad som: ' + ${session.userName}"></p>
     <form th:action="@{/logout}" method="post">
         <input type="submit" value="Logout"/>
-    </form>
+    </form> -->
 </head>
 <body>
 <header>
@@ -15,7 +15,7 @@
         <div class="header-text">
             <thead>
             <h1 style="font-size:80px">HELPIFY</h1>
-            <th><a href="/startPage">Startsida</a></th>
+            <th><a href="/">Startsida</a></th>
             <th class="dropdown">
                 <a class="btn btn-secondary dropdown-toggle" href="/myPage" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Mina sidor</a>

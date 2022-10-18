@@ -5,23 +5,36 @@
     <title>AdminPage</title>
     <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'">
     <p th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p>
-    <form th:action="@{/logout}" method="post">
+    <!-- <form th:action="@{/logout}" method="post">
         <input type="submit" value="Logga ut"/>
-    </form>
+    </form> -->
 </head>
 <body>
 
 <header>
-    <table>
+    <div class="header1">
+    <div class="header-text">
         <thead>
-        <th><a href="/organisations">Våra Organisationer</a></th>
+        <h1 style="font-size:80px">HELPIFY</h1>
+        <th><a href="/">Startsida</a></th>
         <th><a href="/donation">Donera</a></th>
-        <th><a href="/SignUp">Bli Medlem</a></th>
-        <th><a href="/">Om Oss</a></th>
-        <th><a href="/myPage">Mina Sidor</a></th>
-        <th><a href="/login">Login</a></th>
+        <th><a href="/organisations">Våra Organisationer</a></th>
+        <th><a href="/signup">Bli Medlem</a></th>
+        <thdiv class="dropdown">
+            <a class="btn btn-secondary dropdown-toggle" href="/myPage" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Mina sidor</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/myPage">Mina sidor</a></li>
+                <li><a class="dropdown-item" href="/stats">Mina donationer</a></li>
+                <li><a class="dropdown-item" href="/Inställningar">Inställningar</a></li>
+            </ul>
+        </thdiv>
+        <th><a href="/login">Logga in</a></th>
+        <th><a href="/logout">Logga ut</a></th>
+        <th><p th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p></th>
         </thead>
-    </table>
+    </div>
+</div>
 </header>
 
 </body>
