@@ -45,8 +45,8 @@
             <div class="column">
                 <form action="/organisations" method="POST">
                     <input type="hidden" name="org" th:value="${organisation.name}">
-                    <input type="number" name="sum"/>
-                    <input type="submit" value="Donera">
+                    <input type="number" name="sum" class="orgDonateSum" oninput="orgButtonHide()"/>
+                    <input type="submit" value="Donera" class="orgDonateButton" disabled>
                 </form>
             </div>
         </div>
