@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title> Mina sidor </title>
-   <!-- <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'">
-    <p th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p> -->
+   <!-- <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'"> -->
+    <p th:if="${#httpServletRequest.remoteUser}" th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p>
     <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
