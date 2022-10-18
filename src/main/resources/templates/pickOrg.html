@@ -3,46 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <title>Vald organisation</title>
-  <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'">
-  <div th:if="${session.userName} != null">
-    <p th:text="'Inloggad som: ' + ${session.userName}"></p>
-  </div>
-  <form th:action="@{/logout}" method="post">
-    <input type="submit" value="Logga ut"/>
-  </form>
+    <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'">
+    <div th:if="${session.userName} != null">
+        <p th:text="'Inloggad som: ' + ${session.userName}"></p>
+    </div>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Logga ut"/>
+    </form>
 </head>
 <body>
 <header>
-  <table>
-    <thead>
-    <th><a href="/organisations">Våra Organisationer</a></th>
-    <th><a href="/donation">Donera</a></th>
-    <th><a href="/SignUp">Bli Medlem</a></th>
-    <th><a href="/">Om Oss</a></th>
-    <th><a href="/myPage">Mina Sidor</a></th>
-    <th><a href="/login">Login</a></th>
-    </thead>
-  </table>
+    <div class="header1">
+        <div class="header-text">
+            <thead>
+            <h1 style="font-size:80px">HELPIFY</h1>
+            <th><a href="/signup">Bli Medlem</a></th>
+            <thdiv class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle" href="/myPage" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Mina sidor</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/myPage">Mina sidor</a></li>
+                    <li><a class="dropdown-item" href="/stats">Mina donationer</a></li>
+                    <li><a class="dropdown-item" href="/Inställningar">Inställningar</a></li>
+                </ul>
+            </thdiv>
+            <th><a href="/login">Logga in</a></th>
+            <th><a href="/logout">Logga ut</a></th>
+            <th><p th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p></th>
+            </thead>
+        </div>
+    </div>
 </header>
-
 <div class="organisation">
-<img class="picture" th:src="'/images/' + ${organisation.name} + '.png'">
-<table>
-  <tr>
-    <th> <h1> Tack för att du vill donera ! </h1> </th>
-    <th>Organisation: </th>
-    <th th:text="${organisation.name}"></th>
-  </tr>
-  <tr>
-    <th>Beskrivning: </th>
-    <th th:text="${organisation.description}"></th>
-  </tr>
-</table>
+    <img class="picture" th:src="'/images/' + ${organisation.name} + '.png'">
+    <table>
+        <tr>
+            <th><h1> Tack för att du vill donera ! </h1></th>
+            <th>Organisation:</th>
+            <th th:text="${organisation.name}"></th>
+        </tr>
+        <tr>
+            <th>Beskrivning:</th>
+            <th th:text="${organisation.description}"></th>
+        </tr>
+    </table>
 
-  <form th:action="@{'/donation' + '?id=' + ${organisation.id}}" method="post">
-
-    <input type="submit" value="Donera nu">
-  </form>
+    <button class="dropbtn" type="button" onclick="quick()">Donera nu</button>
+    <div class="dropdown-content">
+        <div class="row options hide">
+            <div class="column">
+                <form action="/organisations" method="POST">
+                    <input type="hidden" name="org" th:value="${organisation.name}">
+                    <input type="number" name="sum"/>
+                    <input type="submit" value="Donera">
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+                <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by
+                    <a href="#">Helpify </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="/images/script.js"></script>
 </body>
 </html>

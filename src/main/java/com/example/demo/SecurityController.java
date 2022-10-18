@@ -5,15 +5,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.beans.Encoder;
@@ -34,32 +29,19 @@ public class SecurityController {
         return "login";
     }
 
-    @GetMapping("/SignUp")
-    public String addUser(Model model, HttpServletRequest request, HttpSession session) {
+    @GetMapping("/signup")
+    public String addUser(Model model) {
         model.addAttribute("user", new User());
-        /*String username = request.getRemoteUser();
-        // check if there is an active user on the "session"
-        for (User user : userRepo.findAll()) {
-            if (user.getUserName().equals(username)) {
-                model.addAttribute("user", user);
-                session.setAttribute("userName", user.getUserName());
-                session.setAttribute("password", user.getPassword());
-            }
-        }*/
+
         return "saveUser";
     }
 
-    @PostMapping("/SignUp")
-    public String setUser (@ModelAttribute @Valid User user, BindingResult result, HttpSession session) {
+    @PostMapping("/signup")
+    public String setUser (@ModelAttribute @Valid User user, BindingResult result) {
         if (result.hasErrors()) {
             return "saveUser";
         }
-        /*
-        user.setUserName((String)session.getAttribute("userName"));
-        user.setPassword((String)session.getAttribute("password"));
-        userRepo.save(user);
-         System.out.println("POST SIGNUP"); */
-        // only save user if it doesnt already exist in database
+
         if (userRepo.findByUserName(user.getUserName()) == null) {
 
             user.setPassword(encoder.encode(user.getPassword()));
@@ -87,7 +69,6 @@ public class SecurityController {
         model.addAttribute("user", user);
 
         return "myPage";
-
     }
 
     @GetMapping("/logout")
@@ -100,25 +81,4 @@ public class SecurityController {
         res.addCookie(cookie); */
         return "startPage";
     }
-
-/*
-    @GetMapping("/admin1")//obs lagt till 1
-    public String admin() {
-        return "admin";
-    }*/
 }
- /*
-    @PostMapping("/SignUp")
-    public String setUser (@ModelAttribute @Valid User user, BindingResult result, HttpSession session) {
-        if (result.hasErrors()) {
-            return "saveUser";
-        } return "/SignUp";
-    }*/
-//
-//    @PostMapping("/myPage")
-//    public String userPost(@ModelAttribute User user, HttpSession session) {
-//        user.setUserName((String)session.getAttribute("userName"));
-//        user.setPassword((String)session.getAttribute("password"));
-//        userRepo.save(user);
-//        return "myPage";
-//    }sparar inlagd användare, och dirigerar vidare till organisationer. obs fungerar ej ännu

@@ -20,64 +20,54 @@ public class OrganisationController {
     @Autowired
     private UserRepository userRepo;
     @Autowired
+    private DonationRepository donationRepo;
+    @Autowired
+    private DonationService donationService;
+    @Autowired
     private SecurityUserDetailsService serviceRepo;
 
-   //startsidan för de organisationer vi har tillgängliga att donera till.
-    @GetMapping("/organisations")
-    public String orgPage(Model model, HttpSession session, HttpServletRequest request) {
-        //letar efter en användare
-        String userName = request.getRemoteUser();
-        for (User user : userRepo.findAll()) {
-            if (user.getUserName().equals(userName)) {
-                session.setAttribute("userName", user.getUserName());
-                session.setAttribute("firstname", user.getFirstName());
-                session.setAttribute("lastname", user.getLastName());
-                session.setAttribute("email", user.getEmail());
-                session.setAttribute("donations", user.getDonations());
-                session.setAttribute("id", user.getId());
-                session.setAttribute("password", user.getPassword());
-            }
-        }
-        // visar listan med bild och beskrivningstext om organisationen
-        List<Organisation> organisations = (List<Organisation>) orgRepo.findAll();
-        model.addAttribute("organisations", organisations);
-        return "organisations";
-    }
+
+   @GetMapping("/organisations")
+   public String orgPage(Model model) {
+       List<Organisation> organisations = (List<Organisation>) orgRepo.findAll();
+       model.addAttribute("organisations", organisations);
+
+       return "organisations";
+   }
 
     @PostMapping("/organisations")
-    public String organisationSend(Model model, HttpSession session, @RequestParam(value = "id") Long id, HttpServletRequest request) {
-        //om ingen användare hittas återvänd till startstida
-        if (request.getRemoteUser() == null) {
-            return "SignUp";
-        }
-        Organisation organisation = orgRepo.findById(id).orElse(null);
-        String user1 = request.getRemoteUser();
-        Long userId = 0L;
+    public String organisationSend(@RequestParam String org, @RequestParam int sum, HttpServletRequest request, Model model) {
+        List<Organisation> organisations = (List<Organisation>) orgRepo.findAll();
 
-        for (User user : userRepo.findAll()) {
-            if (user.getUserName().equals(request.getRemoteUser())) {
-                userId = user.getId();
+        String userName = request.getRemoteUser();
+        if (userName == null) {
+            return "login";
+        }
+
+        long userId = userRepo.findByUserName(userName).getId();
+
+        for (Organisation o : organisations) {
+            if (o.getName().equals(org)) {
+                Donation d = new Donation();
+                d.setSum(sum);
+                d.setOrganisation(o);
+                d.setUser(userRepo.findById(userId).orElseThrow());
+                donationRepo.save(d);
+                model.addAttribute("totalSum", donationService.addToTotal());
+
+                return "redirect:/";
             }
         }
-        User user = userRepo.findById(userId).orElse(null);
-        // fixa senare, men något som inte stämmer här
+
         return "organisations";
     }
 
-
-    // test, den här behövs egentligen inte hittar organisation via ID
     @GetMapping("/organisations/{id}")
-    public String OrgById(Model model, @PathVariable Long id, HttpSession session) {
+    public String organisation(Model model, @PathVariable Long id) {
+        Organisation organisation = orgRepo.findById(id).orElse(null);
+        model.addAttribute("organisation", organisation);
 
-        Organisation organisation = orgRepo.findById(id).orElse(null);
-        model.addAttribute("organisation", organisation);
         return "pickOrg";
-    }
-    @PostMapping("/organisations/{id}")
-    public String postOrgById(Model model, @PathVariable Long id, HttpSession session, @RequestParam String UserName, @RequestParam String password) {
-        Organisation organisation = orgRepo.findById(id).orElse(null);
-        model.addAttribute("organisation", organisation);
-        return "donation";
     }
 }
 
