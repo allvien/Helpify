@@ -11,6 +11,7 @@
         <div class="header-text">
             <thead>
             <h1 style="font-size:80px">HELPIFY</h1>
+            <th><a href="/">Startsida</a></th>
             <th><a href="/signup">Bli Medlem</a></th>
             <th><a href="/organisations">Våra organisationer</a></th>
             <th><a href="/donation">Donera</a></th>
@@ -24,6 +25,7 @@
                 </ul>
             </thdiv>
             <th><a href="/logout">Logga ut</a></th>
+            <th><p class="hStyle" th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p></th>
         </div>
     </div>
 </header>

@@ -13,13 +13,13 @@
 <body>
 <header>
     <div class="header1">
-        <div class="header-text">
+        <thdiv class="header-text">
             <thead>
             <h1 style="font-size:80px">HELPIFY</h1>
             <th><a href="/">Startsida</a></th>
             <th><a href="/organisations">Våra organisationer</a></th>
             <th><a href="/donation">Donera</a></th>
-            <thdiv class="dropdown">
+            <th div class="dropdown">
                 <a class="btn btn-secondary dropdown-toggle" href="/myPage" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Mina sidor</a>
                 <ul class="dropdown-menu">
@@ -27,7 +27,7 @@
                     <li><a class="dropdown-item" href="/stats">Mina donationer</a></li>
                     <li><a class="dropdown-item" href="/Inställningar">Inställningar</a></li>
                 </ul>
-            </thdiv>
+            </thdiv> </th>
             <th><a href="/login">Logga in</a></th>
             <th><a href="/logout">Logga ut</a></th>
             <th><p th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p></th>
