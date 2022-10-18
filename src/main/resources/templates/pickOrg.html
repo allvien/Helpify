@@ -5,7 +5,7 @@
     <title>Vald organisation</title>
     <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'">
     <div th:if="${session.userName} != null">
-        <p th:text="'Inloggad som: ' + ${session.userName}"></p>
+        <p th:if="${#httpServletRequest.remoteUser}" th:text="'Inloggad som: ' + ${session.userName}"></p>
     </div>
     <form th:action="@{/logout}" method="post">
         <input type="submit" value="Logga ut"/>
