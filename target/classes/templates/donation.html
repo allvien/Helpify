@@ -5,7 +5,7 @@
     <title>Donation</title>
     <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'">
     <div th:if="${session.userName} != null">
-        <p th:text="'Inloggad som: ' + ${session.userName}"></p>
+        <p th:if="${#httpServletRequest.remoteUser}" th:text="'Inloggad som: ' + ${session.userName}"></p>
     </div>
     <div th:if="${session.userName} == null">
         <form th:action="@{/login}" method="post">
@@ -45,15 +45,14 @@
 </header>
 
 <form action="/donation" method="POST">
-    Summa att donera: <input type="number" name="sum" class="donateSum" oninput="buttonHide()" >
+    Summa att donera: <input type="number" name="sum">
     <div th:each="organisation : ${organisations}">
         <div>
-            <input type="checkbox" th:id="${organisation.id}" name="organisations"
-                   class="donationCheck" onchange="buttonHide()" th:value="${organisation.id}">
+            <input type="checkbox" th:id="${organisation.id}" name="organisations" th:value="${organisation.id}">
             <label th:for="${organisation.id}" th:text="${organisation.name}"></label>
         </div>
     </div>
-    <input type="submit" class="donateButton" value="Donera" disabled>
+    <input type="submit" value="Donera">
 </form>
 <footer class="site-footer">
     <div class="container">
