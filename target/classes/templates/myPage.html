@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title> Mina sidor </title>
-    <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'">
-    <p th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p>
+   <!-- <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'">
+    <p th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p> -->
 </head>
 <body>
 <header>
@@ -28,6 +28,7 @@
         </div>
     </div>
 </header>
+<!--
 <div class="sidebar">
     <div class="logo-details">
         <i class='bx bxl-c-plus-plus'></i>
@@ -57,7 +58,7 @@
 
 </script>
 <h2> </h2>
-
+-->
 <p> Vi vill ta en stund för att tacka just Dig (lägg in session.userName för att du är medlem hos oss! För varje månad som du är medlem hos oss </br>
     så bidrar du till att skapa en bättre och friskare värld för både människor som djur och natur.  </p>
 
@@ -73,8 +74,12 @@
         <img class="picture1" src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-760w,f_auto,q_auto:best/rockcms/2022-02/covid-seattle-childrens-hospital-mc-inline-220202-03-ac61cd.jpg" alt="Läkemedelsforskning" style="width:100%">
     </div>
 </div>
-<h3>Dina donationer:</h3>
-<form th:object="${user}" th:if="${noDonation}"><p th:text="${'du har inga donationer registrerade'}"></p>/>
+
+<h3>Dina donationer:
+
+    <p th:if="${noDonation}" th:text="${'du har inga donationer registrerade'}"></p>
+
+<form th:object="${user}" th:if="${noDonation == null}">
     <table>
         <tbody>
         <tr>
@@ -89,6 +94,7 @@
         </tbody>
     </table>
 </form>
+
 
 <footer class="site-footer">
     <div class="container">

@@ -69,9 +69,9 @@ public class SecurityController {
         User user = userRepo.findByUserName(userName);
 
         model.addAttribute("user", user);
-        model.addAttribute("noDonation", user.getDonations().isEmpty());
-        if (user.getDonations().isEmpty()) {
+        if (user.getDonations().isEmpty()){
 
+            model.addAttribute("noDonation", user.getDonations());
         }
 
         return "myPage";
