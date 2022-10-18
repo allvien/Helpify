@@ -16,7 +16,7 @@
         <div class="header-text">
             <thead>
             <h1 style="font-size:50px">HELPIFY</h1>
-            <th><a href="/startPage">Startsida</a></th>
+            <th><a href="/">Startsida</a></th>
             <th><a href="/signup">Bli Medlem</a></th>
             <th><a href="/myPage">Mina Sidor</a></th>
             <th><a href="/login">Logga in</a></th>
@@ -40,16 +40,13 @@
             <div th:text="${organisation.description}">
                 <hr/>
             </div>
-            <button class="dropbtn" type="button" onclick="quick()">Donera</button>
-            <div class="dropdown-content">
-                <div class="row options hide">
-                    <div class="column">
-                        <form action="/organisations" method="POST">
-                            <input type="hidden" name="org" th:value="${organisation.name}">
-                            <input type="number" name="sum"/>
-                            <input type="submit" value="Donera">
-                        </form>
-                    </div>
+            <div class="row options">
+                <div class="column">
+                    <form action="/organisations" method="POST">
+                        <input type="hidden" name="org" th:value="${organisation.name}">
+                        <input type="number" name="sum" class="orgDonateSum" oninput="orgButtonHide()"/>
+                        <input type="submit" value="Donera" class="orgDonateButton" disabled>
+                    </form>
                 </div>
             </div>
         </div>
