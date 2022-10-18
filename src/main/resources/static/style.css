@@ -1,3 +1,6 @@
+.hide {
+    visibility: hidden;
+}
 
 body {
 background: url('/images/HELPIFYGRAD.png');
@@ -99,9 +102,7 @@ Color scheme:
 
 
 
-.hide {
-    visibility: hidden;
-}
+
 /*
 .logo {
 background-repeat: no-repeat;

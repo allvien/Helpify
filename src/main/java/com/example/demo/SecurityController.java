@@ -38,6 +38,7 @@ public class SecurityController {
     @PostMapping("/signup")
     public String setUser (@ModelAttribute @Valid User user, BindingResult result) {
         if (result.hasErrors()) {
+
             return "saveUser";
         }
 
