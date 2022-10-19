@@ -82,8 +82,9 @@
 </div>
 
 <h3>Dina donationer:</h3>
-<form th:object="${user}" th:if="${noDonation}"><p th:text="${'du har inga donationer registrerade'}"></p>
-    <table>
+<p th:object="${user}" th:if="${noDonation}" th:text="${'du har inga donationer registrerade'}"></p>
+    <form th:object="${user}" th:if="${noDonation == null}">
+        <table>
         <tbody>
         <tr>
             <th>Organisation</th>
