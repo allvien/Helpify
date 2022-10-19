@@ -39,6 +39,10 @@
     </div>
 </header>
 
+<!--<p th:if="${httpServletRequest.remoteUser != null}">-->
+<p th:if="${#httpServletRequest.remoteUser}" th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p>
+<!--</p>-->
+
 <article>
     <h1>Välkommen till HelpIfy</h1>
     <p> Det finns många sätt du som privatperson kan bidra till världen. Det kan vara att du engagerar dig som

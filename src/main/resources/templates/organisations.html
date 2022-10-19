@@ -29,7 +29,7 @@
             </thdiv>
             <th><a href="/login">Logga in</a></th>
             <th><a href="/logout">Logga ut</a></th>
-            <th><p class="hStyle" th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p></th>
+            <th th:if="${#httpServletRequest.remoteUser}"><p class="hStyle" th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></></th>
             </thead>
         </div>
     </div>
@@ -61,6 +61,7 @@
     </div>
 </div>
 
+<!-- Site footer -->
 <footer class="site-footer">
     <div class="container">
         <div class="row">
