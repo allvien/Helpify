@@ -3,13 +3,14 @@
 }
 
 body {
-background: url('/images/HELPIFYGRAD.png');
+background: linear-gradient(90deg, hsla(277, 79%, 84%, 1) 0%, hsla(204, 95%, 77%, 1) 100%);
 background-position: center;
 color: black;
-background-color: #a7d2dd;
+/*background-color: #a7d2dd; */
 font-size: 20px;
 font-family: Arial;
 }
+
 
  h1 {
  text-align: center;
@@ -39,7 +40,12 @@ text-align: center;
  font-family: Arial;
  text-align: center;
  }
-
+h6 {
+font-size: 25px;
+ color: #004369;
+ font-family: Arial;
+ text-align: center;
+}
  p {
  font-size: 15px;
  color: white;
@@ -56,8 +62,9 @@ text-align: center;
   background-repeat: no-repeat;
   background-size: contain;
   position: relative;
-  padding: 10px;
+  padding: 5px;
 }
+
 
 .header-text {
   text-align: center;
@@ -69,20 +76,58 @@ text-align: center;
   transform: translate(-50%, -50%);
   color: white;
 }
+
  .header-text hStyle {
  color: white;
  }
 
-.header1 header-text dropdown {
+.presentation {
+/*margin-left: 800px; */
+background: linear-gradient(90deg, hsla(277, 79%, 84%, 1) 0%, hsla(204, 95%, 77%, 1) 100%);
+
+padding: 15px;
 
 }
+.presentation p {
+color: #004369;
+font-size: 20px;
+}
+.sumPres {
+color: #004369;
+font-size: 20px;
+background: linear-gradient(90deg, hsla(277, 79%, 84%, 1) 0%, hsla(204, 95%, 77%, 1) 100%);
 
-.container{
+padding: 15px;
+ border-color: #004369;
+}
 
-place-content: left start;
-image: auto;
-text-align: justify;
+.totalSum {
+font-size:300px;
+background: linear-gradient(90deg, hsla(277, 79%, 84%, 1) 0%, hsla(204, 95%, 77%, 1) 100%);
+color: #004369;
+font-family: Luminari;
+text-align: center;
+border: solid 5px;
+padding: 5px;
+text-decoration-line: underline;
+}
 
+.dropdown1 {
+background: linear-gradient(90deg, hsla(277, 79%, 84%, 1) 0%, hsla(204, 95%, 77%, 1) 100%);
+color: #004369;
+font-family: Luminari;
+text-align: center;
+padding: 5px;
+font-size: 45px;
+}
+
+.giftBox {
+font-size: 20px;
+}
+
+.orgBox {
+margin: 15px;
+background: mintcream;
 }
 /*
 .container row col {
@@ -92,23 +137,30 @@ border: 5px solid #004369;
 .picture {
 width: 350px;
 height: 200px;
-
 }
 
 .myPage picture1 {
 width: 5%;
 height: 5%;
-
 }
 
-.organisation
-.organisationTop
-.startOrg h2 {
-font-size: 20px;
-top: 0%;
-color:#0E2A36;
-text-align:center;
-padding: 5px;
+.bidrar row {
+display: flex;
+align-items: center;
+}
+.bidrar col {
+align-items: center;
+vertical-align: middle;
+}
+
+.organisationTop{
+font-size: 60px;
+ color:  #004369;
+ font-family: Arial;
+ text-align: center;
+text-decoration-line: underline;
+
+
 }
 
 a:link {
@@ -136,17 +188,16 @@ background-color: #a7d2dd;
 
 /* Footer */
 footer {
-    background-color:  #a7d2dd;
+background: linear-gradient(90deg, hsla(277, 79%, 84%, 1) 0%, hsla(204, 95%, 77%, 1) 100%);
     padding: 25px;
     text-align: center;
 }
 
 #footerbtn {
     /* Button for newsletter sign-up in the footer*/
-    background-color: #a7d2dd;
+  background: linear-gradient(90deg, hsla(217, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);
 
-    color: #0E2A36;
-    text-align: center;
+   text-align: center;
 }
 
 
@@ -159,12 +210,6 @@ Color scheme:
     Green: #257D5E          (e.g. logo)
     Yellow: #FFDD5C         (e.g. for alerts)
 */
-
-
-
-.hide {
-    visibility: hidden;
-}
 
 
 /*
@@ -183,7 +228,6 @@ Clear floats after image containers
 }
 
 */
-
 
 
 /***** Styling for all pages *****/
