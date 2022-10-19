@@ -1,0 +1,11 @@
+.formContainer {
+    display: flex;
+}
+
+.form {
+    flex-direction: block;
+}
+
+.saveuserbody {
+    background-color: aqua;
+}
