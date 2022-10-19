@@ -47,7 +47,8 @@
     <div class="presentation container">
         <div class="row">
             <div class="col-sm">
-    <h1>Välkommen till HelpIfy</h1>
+                <h2>Välkommen till</h2>
+               <h1 style="font-size: 150px;"> HelpIfy</h1>
 
 
                 <p> Det finns många sätt du som privatperson kan bidra till världen. Det kan vara att du engagerar dig som
@@ -60,6 +61,20 @@
     </p> </div></div></div>
     <br>
     <br>
+    <div class="bidrar container">
+        <div class="row justify-content-around">
+            <div class="col">  <img class="bidrar" style="width:100%"  th:src="'images/VI BIDRAR.png'" alt="ViInformerar">
+                </div>
+            <div class="col">  <img class="bidrar"style="width:100% height:100%"  th:src="'images/VI BIDRAR1.png'" alt="ViEngagerar">
+            </div>
+            <div class="col">  <img class="bidrar" style="width:100%" th:src="'images/VI BIDRAR2.png'" alt="ViBidrar">
+            </div>
+
+        </div>
+
+    </div>
+    <br>
+    <br>
     <div class="sumPres container">
         <div class="row">
             <div class="col-sm">
@@ -70,7 +85,7 @@
     </br>
     </br>
     <div class="totalSum container">
-    <span class="donation" th:text="${totalSum}"></span>
+    <span class="donation" th:text="${totalSum} + ' kr'"></span>
     <br></div>
 </br>
 </br>
@@ -81,7 +96,7 @@
         <button class="dropbtn" onclick="quick()">Ge en gåva</button>
         <div class="dropdown-content">
             <div class="row options hide">
-                <div class="column">
+                <div class="giftBox column">
                     <form action="/" method="POST">
                         <input type="hidden" name="organisation" value="WWF">
                         <h3>WWF</h3>
@@ -90,7 +105,7 @@
                         <input type="submit" name="Kr" Value="500"/>
                     </form>
                 </div>
-                <div class="column">
+                <div class="giftBox column">
                     <form action="/" method="POST">
                         <input type="hidden" name="organisation" value="NATURSKYDDSFÖRENINGEN">
                         <h3>NATURSKYDDSFÖRENINGEN</h3>
@@ -99,7 +114,7 @@
                         <input type="submit" name="Kr" Value="500"/>
                     </form>
                 </div>
-                <div class="column">
+                <div class="giftBox column">
                     <form action="/" method="POST">
                         <input type="hidden" name="organisation" value="RESCUE">
                         <h3>RESCUE</h3>

@@ -3,7 +3,7 @@
 }
 
 body {
-background: url('/images/HELPIFYGRAD.png');
+background: linear-gradient(90deg, hsla(277, 79%, 84%, 1) 0%, hsla(204, 95%, 77%, 1) 100%);
 background-position: center;
 color: black;
 /*background-color: #a7d2dd; */
@@ -83,10 +83,10 @@ font-size: 25px;
 
 .presentation {
 /*margin-left: 800px; */
-background: mintcream;
-border: solid 5px;
+background: linear-gradient(90deg, hsla(277, 79%, 84%, 1) 0%, hsla(204, 95%, 77%, 1) 100%);
+
 padding: 15px;
- border-color: #004369;
+
 }
 .presentation p {
 color: #004369;
@@ -95,15 +95,15 @@ font-size: 20px;
 .sumPres {
 color: #004369;
 font-size: 20px;
-background: mintcream;
-border: solid 5px;
+background: linear-gradient(90deg, hsla(277, 79%, 84%, 1) 0%, hsla(204, 95%, 77%, 1) 100%);
+
 padding: 15px;
  border-color: #004369;
 }
 
 .totalSum {
 font-size:300px;
-background: mintcream;
+background: linear-gradient(90deg, hsla(277, 79%, 84%, 1) 0%, hsla(204, 95%, 77%, 1) 100%);
 color: #004369;
 font-family: Luminari;
 text-align: center;
@@ -113,12 +113,16 @@ text-decoration-line: underline;
 }
 
 .dropdown1 {
-background: mintcream;
+background: linear-gradient(90deg, hsla(277, 79%, 84%, 1) 0%, hsla(204, 95%, 77%, 1) 100%);
 color: #004369;
 font-family: Luminari;
 text-align: center;
-border: solid 5px;
 padding: 5px;
+font-size: 45px;
+}
+
+.giftBox {
+font-size: 20px;
 }
 
 .orgBox {
@@ -133,15 +137,21 @@ border: 5px solid #004369;
 .picture {
 width: 350px;
 height: 200px;
-
 }
 
 .myPage picture1 {
 width: 5%;
 height: 5%;
-
 }
 
+.bidrar row {
+display: flex;
+align-items: center;
+}
+.bidrar col {
+align-items: center;
+vertical-align: middle;
+}
 
 .organisationTop{
 font-size: 60px;
@@ -178,17 +188,16 @@ background-color: #a7d2dd;
 
 /* Footer */
 footer {
-    background-color:  #a7d2dd;
+background: linear-gradient(90deg, hsla(277, 79%, 84%, 1) 0%, hsla(204, 95%, 77%, 1) 100%);
     padding: 25px;
     text-align: center;
 }
 
 #footerbtn {
     /* Button for newsletter sign-up in the footer*/
-    background-color: #a7d2dd;
+  background: linear-gradient(90deg, hsla(217, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);
 
-    color: #0E2A36;
-    text-align: center;
+   text-align: center;
 }
 
 
