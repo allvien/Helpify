@@ -28,7 +28,7 @@
             </thdiv>
             <th><a href="/login">Logga in</a></th>
             <th><a href="/logout">Logga ut</a></th>
-            <th th:if="${#httpServletRequest.remoteUser}"><p class="hStyle" th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></></th>
+            <th th:if="${#httpServletRequest.remoteUser}"><p class="hStyle" th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></th>
             </thead>
         </div>
     </div>

@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <title>Spara användare</title>
     <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'">
-    <p th:if="${#httpServletRequest.remoteUser}" th:text="'Inloggad som: ' + ${session.userName}"></p>
-    <!--<form th:action="@{/logout}" method="post">
+  <!--  <p th:text="'Inloggad som: ' + ${session.userName}"></p>
+    <form th:action="@{/logout}" method="post">
         <input type="submit" value="Logout"/>
-        <input type="Hidden" value="Logout"/> -->
-    </form>
+    </form> -->
 </head>
 <body>
 <header>
@@ -28,7 +27,7 @@
             </th>
             <th><a href="/login">Logga in</a></th>
             <th><a href="/logout">Logga ut</a></th>
-            <th><p th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p></th>
+            <th><p th:if="${#httpServletRequest.remoteUser}" th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p></th>
             </thead>
         </div>
     </div>
