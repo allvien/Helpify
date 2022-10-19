@@ -33,8 +33,6 @@
         </div>
     </div>
 </header>
-<div class="container organisationTop"> Nu gör vi världen bättre! </br> </div>
-
 
 <div class="organisationTop">
     <h1>Nu gör vi världen bättre! </h1>
@@ -58,19 +56,10 @@
                             <input type="number" name="sum"/>
                             <input type="submit" value="Donera">
                         </form>
-
                     </div>
-            <div class="row options ">
-                <div class="column">
-                    <form action="/organisations" method="POST">
-                        <input type="hidden" name="org" th:value="${organisation.name}">
-                        <input type="number" name="sum" class="orgDonateSum" oninput="orgButtonHide()"/>
-                        <input type="submit" value="Donera" class="orgDonateButton" disabled>
-                    </form>
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 
