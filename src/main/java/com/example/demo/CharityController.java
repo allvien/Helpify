@@ -32,26 +32,17 @@ public class CharityController {
     }
 
     @PostMapping("/")
-    public String startPageAdd(@RequestParam String organisation, @RequestParam int Kr, Model model, HttpServletRequest request) {
+    public String startPageAdd(@RequestParam String organisation, @RequestParam int Kr, Model model) {
         List<Organisation> organisations = (List<Organisation>) orgRepo.findAll();
-        String userName = request.getRemoteUser();
-
-        if (userName == null) {
-            return "login";
-        }
-
-        long userId = userRepo.findByUserName(userName).getId();
 
         for (Organisation o : organisations) {
             if (o.getName().equals(organisation)) {
                 Donation d = new Donation();
                 d.setSum(Kr);
                 d.setOrganisation(o);
-                d.setUser(userRepo.findById(userId).orElseThrow());
                 donationRepo.save(d);
 
                 model.addAttribute("totalSum", donationService.addToTotal());
-
             }
         }
         return "startPage";
@@ -86,20 +77,6 @@ public class CharityController {
         return "stats";
     }
 
-
-   //startsidan för medlemmar
-    /*@GetMapping("/signUp")
-    public String addUser(Model model) {
-        model.addAttribute("user", new User());
-        return "saveUser";
-    }
-    // sparar inlagd användare, och dirigerar vidare till organisationer. obs fungerar ej ännu
-    @PostMapping("/saveUser")
-    public String setUser (@ModelAttribute User user) {
-        userRepo.save(user);
-        return "redirect:/organisations";
-    }
-*/
     @GetMapping("/admin")
     public String adminPage() {
         return "adminPage";

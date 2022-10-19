@@ -4,7 +4,7 @@ const donationButton = document.querySelector("input.donateButton")
 const orgDonationButton = document.querySelector("input.orgDonateButton")
 
 function quick() {
-    options.classList.remove("hide")
+    options.classList.toggle("hide")
 }
 
 function buttonHide() {
