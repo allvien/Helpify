@@ -149,7 +149,10 @@ footer {
     text-align: center;
 }
 
-
+.donationForm {
+    display: flex;
+    justify-content: center;
+}
 
 /*
 Color scheme:
@@ -160,11 +163,6 @@ Color scheme:
     Yellow: #FFDD5C         (e.g. for alerts)
 */
 
-
-
-.hide {
-    visibility: hidden;
-}
 
 
 /*
