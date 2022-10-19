@@ -70,8 +70,21 @@ public class SecurityController {
         //fylla donationslistan. loopa user.donations. finns organisation i user donations? om inte skapa objekt som adderas i -->
         //donationslista summerad
 
+        for (Donation donation : user.getDonations()) {
+            boolean foundDonation = false;
 
-        //model.addAttribute("donations", donations); ändra myPage rad 95: ${donations}
+            for (Donation don : donations) {
+                if (donation.getOrganisation().getId() == don.getOrganisation().getId()) {
+                    don.setSum(donation.getSum() + don.getSum());
+                    foundDonation = true;
+                }
+            }
+            if (!foundDonation) {
+                donations.add(donation);
+            }
+        }
+
+        model.addAttribute("donations", donations);
         //list user donations
         if (user.getDonations().isEmpty()){
             model.addAttribute("noDonation", user.getDonations());
