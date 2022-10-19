@@ -14,19 +14,18 @@
     <div class="header1">
         <div class="header-text">
             <thead>
-            <th><h1 style="font-size:80px">HELPIFY </h1></th>
+            <th> <h1 style="font-size:80px">HELPIFY </h1></th>
             <th><a href="/">Startsida</a></th>
             <th><a href="/signup">Bli Medlem</a></th>
-            <thdiv class="dropdown">
-                <a class="btn btn-secondary dropdown-toggle" href="/myPage" role="button" data-bs-toggle="dropdown"
-                   aria-expanded="false">
+            <div class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle" href="/myPage" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Mina sidor</a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="/myPage">Mina sidor</a></li>
                     <li><a class="dropdown-item" href="/stats">Mina donationer</a></li>
                     <li><a class="dropdown-item" href="/Inställningar">Inställningar</a></li>
                 </ul>
-            </thdiv>
+            </div>
             <th><a href="/login">Logga in</a></th>
             <th><a href="/logout">Logga ut</a></th>
             <th th:if="${#httpServletRequest.remoteUser}"><p class="hStyle" th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></th>
@@ -41,7 +40,7 @@
 </div>
 <div class="container pt-3 text-center">
     <div class="row">
-        <div class="col-6 rounded-4" style="border:5px solid #004369" th:each="organisation : ${organisations}">
+        <div class="col-6 rounded-4"style="border:5px solid #004369"  th:each="organisation : ${organisations}">
             <img class="picture" th:src="'images/' + ${organisation.name} + '.png'"> </br>
             <a th:href="'/organisations/' + ${organisation.id}" th:text="${organisation.name}"></a>
             <h4> Om: </h4>

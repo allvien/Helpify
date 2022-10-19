@@ -81,10 +81,9 @@
         <img class="picture1" src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-760w,f_auto,q_auto:best/rockcms/2022-02/covid-seattle-childrens-hospital-mc-inline-220202-03-ac61cd.jpg" alt="Läkemedelsforskning" style="width:100%">
     </div>
 </div>
-
 <h3>Dina donationer:</h3>
-<p th:if="${noDonation}" th:text="${'du har inga donationer registrerade'}"></p>
-    <form th:if="${noDonation == null}">
+<p th:object="${user}" th:if="${noDonation}" th:text="${'du har inga donationer registrerade'}"></p>
+    <form th:object="${user}" th:if="${noDonation == null}">
         <table>
         <tbody>
         <tr>
