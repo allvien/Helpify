@@ -14,12 +14,15 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.beans.Encoder;
+import java.util.List;
 
 @Controller
 public class SecurityController {
 
     @Autowired
     private UserRepository userRepo;
+    @Autowired
+    private DonationRepository donRepo;
     @Autowired
     PasswordEncoder encoder;
 
@@ -69,10 +72,17 @@ public class SecurityController {
         User user = userRepo.findByUserName(userName);
 
         model.addAttribute("user", user);
-        model.addAttribute("noDonation", user.getDonations().isEmpty());
-        if (user.getDonations().isEmpty()) {
-
+        if (user.getDonations().isEmpty()){
+            model.addAttribute("noDonation", user.getDonations());
         }
+
+        /*List<Donation> donations= donRepo.findAllByOrganisation();
+        Organisation org = new Organisation();
+
+        for (Donation orgName : donations){
+            if (orgName.getId() ==
+
+        }*/
 
         return "myPage";
     }
