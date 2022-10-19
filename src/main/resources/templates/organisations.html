@@ -14,7 +14,7 @@
     <div class="header1">
         <div class="header-text">
             <thead>
-            <th><h1 style="font-size:80px">HELPIFY </h1></th>
+            <th> <h1 style="font-size:80px">HELPIFY </h1></th>
             <th><a href="/">Startsida</a></th>
             <th><a href="/signup">Bli Medlem</a></th>
             <thdiv class="dropdown">
@@ -26,7 +26,7 @@
                     <li><a class="dropdown-item" href="/stats">Mina donationer</a></li>
                     <li><a class="dropdown-item" href="/Inställningar">Inställningar</a></li>
                 </ul>
-            </thdiv>
+            </div>
             <th><a href="/login">Logga in</a></th>
             <th><a href="/logout">Logga ut</a></th>
             <th th:if="${#httpServletRequest.remoteUser}"><p class="hStyle" th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></th>
@@ -34,6 +34,8 @@
         </div>
     </div>
 </header>
+<div class="container organisationTop"> Nu gör vi världen bättre! </br> </div>
+
 
 <div class="organisationTop">
     <h1>Nu gör vi världen bättre! </h1>
@@ -43,6 +45,11 @@
     <div class="row">
         <div class="col-6 rounded-4" style="border:5px solid #004369" th:each="organisation : ${organisations}">
             <img class="picture" th:src="'images/' + ${organisation.name} + '.png'"> </br>
+<div class="container text-center ">
+    <div class="row row-cols-4 ">
+
+        <div class="orgBox col-5 rounded-4"style="border:5px solid #004369"  th:each="organisation : ${organisations}"></br>
+            <img class="img-fluid" th:src="'images/' + ${organisation.name} + '.png'"> </br>
             <a th:href="'/organisations/' + ${organisation.id}" th:text="${organisation.name}"></a>
             <h4> Om: </h4>
             <div th:text="${organisation.description}">
