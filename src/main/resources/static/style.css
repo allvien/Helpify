@@ -359,3 +359,16 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 } */
+
+/**** SAVE USER ***/
+.formContainer {
+    display: flex;
+}
+
+.form {
+    flex-direction: block;
+}
+
+.saveuserbody {
+    background-color: aqua;
+}
