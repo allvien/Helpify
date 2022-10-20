@@ -1,5 +1,5 @@
 .hide {
-    visibility: hidden;
+visibility: hidden;
 }
 
 body {
@@ -31,6 +31,7 @@ h2 {
 text-decoration:none;
 font-size:20px;
 text-indent:15px;
+color: #004369;
 }
 
 h3 {
@@ -60,29 +61,42 @@ p {
 }
 
 .header1 {
-  background: url('/images/HELPIFYAVL.png');
-  background-color: #a7d2dd;
-  height: 125px;
-  background-repeat: no-repeat;
+  /*background: url('/images/HELPIFYAVL.png'); */
+ height: 200px;
+ color: #004369;
+ /* background: linear-gradient(90deg, hsla(277, 79%, 84%, 1) 0%, hsla(204, 95%, 77%, 1) 100%);
+
+background-repeat: no-repeat;
   background-size: 600px;
   position: relative;
-  padding: 5px;
+  padding: 5px;*/
 }
 
 
 .header-text {
   text-align: center;
-  background-color: #a7d2dd;
+ /* background-color: #a7d2dd;*/
   font:Luminari;
+  color: #004369;
+  padding-bottom: 25px;
+  /*
   position: absolute;
   top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
+  margin-bottom:75px;*/
 }
-
- .header-text hStyle {
- color: white;
+.logotyp{
+height:100px;
+width:100px;
+position:center;
+border-radius:50%
+}
+ .headline {
+ color:  #004369;;
+ font-size:100px;
+ font:Luminari;
  }
 
 .presentation {
@@ -166,11 +180,19 @@ font-family: Luminari;
 text-align: center;
 padding: 5px;
 }
+dropdown {
+color: #004369;
+font-size: 23px;
+background-color:white ;
+border-color: #004369;
+font-family: Luminari;
 
+}
 .button3 {
 font-size: 28px;
 color: #004369;
-background: linear-gradient(90deg, hsla(217, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);
+background-color:white;
+border-color: #004369;
 font-family: Luminari;
 }
 
@@ -186,15 +208,79 @@ color: #004369;
 font-family: Luminari;
 }
 
-.orgBox {
-margin: 15px;
-background: white;
-padding: 20 px;
+.donationForm {
+display: flex;
+justify-content: center;
+padding:
 }
+
+.donInfo {
+font-family: Luminari;
+font-size: 25px;
+color: #004369;
+margin: 15px;
+}
+
+.orgBox {
+margin: 30px;
+background: white;
+
+}
+
 .donText h4 {
 font-size: 15px;
 color: #004369;
 }
+
+.donateSumInput span {
+font-family: Luminari;
+font-size: 25px;
+color: #004369;
+}
+
+.donateSum {
+height:40px;
+font-size:25px;
+}
+
+.donationCheck {
+height: 15px;
+width: 15px;
+}
+
+.donateButton {
+height: 50px;
+font-size: 25px;
+}
+
+.donateButtonActive {
+border-color: #004369;
+}
+
+.donBox {
+width: 40%;
+margin: 15px;
+padding: 20px;
+background: mintcream;
+border:5px solid #004369;
+font-family: Luminari;
+color: #004369;
+}
+
+.donateSumInput, .donateButtonDiv {
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.donateSumInput {
+margin-bottom: 15px;
+}
+
+.donateButtonDiv {
+margin-top: 15px;
+}
+
 /*
 .container row col {
 border: 5px solid #004369;
@@ -266,11 +352,6 @@ background: linear-gradient(90deg, hsla(277, 79%, 84%, 1) 0%, hsla(204, 95%, 77%
     /* Button for newsletter sign-up in the footer*/
   background: linear-gradient(90deg, hsla(217, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);
    text-align: center;
-}
-
-.donationForm {
-    display: flex;
-    justify-content: center;
 }
 
 /*

@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Donation</title>
     <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 <body>
 <header>
@@ -24,17 +26,27 @@
 </header>
 
 <div class="donationForm">
-    <form action="/donation" method="POST">
-        Summa att donera: <input type="number" name="sum" class="donateSum" oninput="buttonHide()">
-        <div th:each="organisation : ${organisations}">
-            <div>
-                <input type="checkbox" th:id="${organisation.id}" name="organisations"
-                       class="donationCheck" onchange="buttonHide()" th:value="${organisation.id}">
-                <label th:for="${organisation.id}" th:text="${organisation.name}"></label>
-            </div>
+    <div class="donBox col-5 rounded-4">
+        <div>
+            <p class="donInfo">Ange ett belopp och välj vilka organisationer summan ska fördelas på</p>
         </div>
-        <input type="submit" value="Donera" class="donateButton" disabled>
-    </form>
+        <form action="/donation" method="POST">
+            <div class="donateSumInput">
+                <span>Summa att donera</span>
+                <input type="number" name="sum" class="donateSum" oninput="buttonHide()">
+            </div>
+            <div th:each="organisation : ${organisations}">
+                <div>
+                    <input type="checkbox" th:id="${organisation.id}" name="organisations"
+                           class="donationCheck" onchange="buttonHide()" th:value="${organisation.id}">
+                    <label th:for="${organisation.id}" th:text="${organisation.name}"></label>
+                </div>
+            </div>
+            <div class="donateButtonDiv">
+                <input type="submit" value="Donera" class="donateButton" disabled>
+            </div>
+        </form>
+    </div>
 </div>
 
 <footer class="site-footer">
