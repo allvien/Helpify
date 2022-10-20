@@ -18,14 +18,15 @@
         <th><h1 class="headline">HelpIfy</h1></th>
         <div class="header-text">
             <thead>
-            <th><a href="/helpify">Startsida   </a></th>
-            <th><a href="/signup">Bli Medlem   </a></th>
-            <th><a href="/organisations">Våra organisationer   </a></th>
-            <th><a href="/donation">Donera   </a></th>
-            <th><a href="/myPage">Mina sidor   </a></th>
+            <th><a href="/helpify">Startsida </a></th>
+            <th><a href="/signup">Bli Medlem </a></th>
+            <th><a href="/organisations">Våra organisationer </a></th>
+            <th><a href="/donation">Donera </a></th>
+            <th><a href="/myPage">Mina sidor </a></th>
             <th th:if="${#httpServletRequest.remoteUser == null}"><a href="/login">Logga in</a></th>
             <th th:if="${#httpServletRequest.remoteUser}"><a href="/logout">Logga ut</a></th>
-            <th th:if="${#httpServletRequest.remoteUser}"><p th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p></th>
+            <th th:if="${#httpServletRequest.remoteUser}"><p
+                    th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p></th>
             </thead>
         </div>
     </div>
@@ -61,50 +62,54 @@
 </script>
 <h2> </h2>
 -->
-<h6>  Vi vill ta en stund för att tacka just Dig</h6>
-<h6 th:text="${#httpServletRequest.remoteUser}"></h6>
-<h6> för att du är medlem hos oss! För varje månad som du är medlem hos oss
-    så bidrar du till att skapa en bättre och friskare värld för både människor som djur och natur.</h6>
-
+<div class="mypagetext">
+<span> Vi vill ta en stund för att tacka just Dig </span>
+<span th:text="${#httpServletRequest.remoteUser}"></span>
+<span> för att du är medlem hos oss! För varje månad som du är medlem hos oss
+    så bidrar du till att skapa en bättre och friskare värld för både människor som djur och natur.</span>
+</div>
 
 <div class="row">
     <div class="row justify-content-around">
-        <div class="col"><img class="Vi bidrar" style="width:70%%" th:src="'images/MypageNew.png'" alt="Bild på vad man kan bidra till">
+        <div class="col">
+            <img class="Vi bidrar" style="width:70%%" th:src="'images/MypageNew.png'"
+                 alt="Bild på vad man kan bidra till"/>
         </div>
     </div>
 
-<
 
-<h3>Dina donationer:</h3>
-<p th:if="${noDonation}" th:text="${'du har inga donationer registrerade'}"></p>
-<form th:if="${noDonation == null}">
-    <table>
-        <tbody>
-        <tr>
-            <th>Organisation</th>
-            <th>summa</th>
-        </tr>
+    <h3 class="statrubrik">Dina donationer:</h3>
+    <p th:if="${noDonation}" th:text="${'du har inga donationer registrerade'}"></p>
 
-        <tr th:each="donation : ${donations}">
-            <td th:text="${donation.organisation.name}"></td>
-            <td th:text="${donation.sum} + 'sek'"></td>
-        </tr>
-        </tbody>
-    </table>
-</form>
+    <div class="statistik">
+        <form th:if="${noDonation == null}">
+            <table>
+                <tbody>
+                <tr class="stattr">
+                    <th class="stattr">Organisation</th>
+                    <th class="stattr">Summa</th>
+                </tr>
 
+                <tr th:each="donation : ${donations}">
+                    <td class="stattr" th:text="${donation.organisation.name}"></td>
+                    <td class="stattr" th:text="${donation.sum} + 'sek'"></td>
+                </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
 
-<footer class="site-footer">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by
-                    <a href="#">Helpify </a>
-                </p>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by
+                        <a href="#">Helpify </a>
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 </div>
 </body>
 </html>

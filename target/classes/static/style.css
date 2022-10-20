@@ -522,7 +522,7 @@ body {
     border: solid rgb(47, 16, 133);
 }
 
-.button1{
+.button1 {
     background-color: #d5e7f1;
     padding: 6px;
     margin-bottom: 10px;
@@ -576,6 +576,24 @@ body {
     font-size: small;
 }
 
-.errorclass{
-    border: solid red;
+/*** MY PAGE ****/
+.mypagetext{
+    text-align: center;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.statrubrik{
+    margin-top: 40px;
+}
+
+.statistik{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px
+}
+
+.stattr{
+    padding: 5px 20px;
 }
