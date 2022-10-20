@@ -2,10 +2,12 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>StartPage</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <title>Organisations</title>
+    <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <!--
@@ -18,23 +20,14 @@
     <div class="header1">
         <div class="header-text">
             <thead>
-            <h1 style="font-size:80px">HELPIFY</h1>
+            <th><a href="/helpify">Startsida</a></th>
             <th><a href="/signup">Bli Medlem</a></th>
             <th><a href="/organisations">Våra organisationer</a></th>
             <th><a href="/donation">Donera</a></th>
-            <thdiv class="dropdown">
-                <a class="btn btn-secondary dropdown-toggle" href="/myPage" role="button" data-bs-toggle="dropdown"
-                   aria-expanded="false">
-                    Mina sidor</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/myPage">Mina sidor</a></li>
-                    <li><a class="dropdown-item" href="/stats">Mina donationer</a></li>
-                    <li><a class="dropdown-item" href="/Inställningar">Inställningar</a></li>
-                </ul>
-            </thdiv>
-            <th><a href="/login">Logga in</a></th>
-            <th><a href="/logout">Logga ut</a></th>
-            <th><p th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p></th>
+            <th><a href="/myPage">Mina sidor</a></th>
+            <th th:if="${#httpServletRequest.remoteUser == null}"><a href="/login">Logga in</a></th>
+            <th th:if="${#httpServletRequest.remoteUser}"><a href="/logout">Logga ut</a></th>
+            <th th:if="${#httpServletRequest.remoteUser}"><p th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p></th>
             </thead>
         </div>
     </div>
@@ -49,18 +42,15 @@
         <div class="row">
             <div class="col-sm">
                 <h2>Välkommen till</h2>
-                <h1 style="font-size: 150px;"> HelpIfy</h1>
 
 
-                <p> Det finns många sätt du som privatperson kan bidra till världen. Det kan vara att du engagerar dig
-                    som
-                    volontär, blir månadsgivare, ger en engångssumma eller testamenterar en summa till välgörenhet.
-                    Vi är här
-                    för att hjälpa dig som
-                    kanske ännu inte har börjat donera pengar och letar efter en smidig lösning för detta. Eller kanske
-                    du redan är
-                    månadsgivare idag men vill
-                    samla dina donationer på ett och samma ställe?
+                <p> Det finns många sätt du som privatperson kan bidra till att göra världen till en bättre plats. Du kan bidra med din tid och bli volontär, du kan skänka saker du inte längre behöver. Om du har extra pengar över bidra till att stötta någon av alla de organisationer som arbetar för att göra världen till en bättre plats.
+                    </br>  </br> Vi arbetar för att underlätta detta för dig, oavsett om du är en van donerare eller om det är första gången!
+                   Du kanske redan är månadsgivare men letar efter fler organisationer att stötta? </br></br> Eller kanske du vill donera pengar men inte hittat rätt organisation?
+                    Hos oss kan du på ett enkelt sätt samla dina donationer på ett och samma ställe.</br></br> Vi stöttar organisationer inom läkemedelsforskning, djur och natur, naturkatastrofer och människorätt. </br> </br>Du väljer själv hur mycket och hur ofta du vill donera. Har du inte tid att bli medlem just nu? Använd vår snabbdonation längst ner på sidan. Inget medlemskap krävs!
+                    </br>  </br> Har du mer tid över? Gå in på sidan "organisationer" där du kan läsa mer om de organisationer som finns listade hos oss idag.
+
+                    Ingen kan göra allt, men alla kan göra något!
                 </p></div>
         </div>
     </div>
@@ -96,11 +86,12 @@
     </br>
     </br>
     <div class="dropdown1 container">
-        <h2>Vill du också vara med och bidra? </h2>
         <div class="row">
             <div class="col-sm">
-                <br>
-                <button class="dropbtn button3" onclick="quick()">Är du redo att hjälpa?</button>
+                <br> <div> <h1>Vill du också vara med och bidra? </h1>
+          <h2>  Vi vet att tiden inte alltid finns. Du kanske inte har tid att skapa ett konto just idag. Genom vår snabbdonation kan du snabbt ge en gåva utan att ha ett medlemskap. Klicka på knappen nedan för att ge ett bidrag till någon av våra tre mest behövande organisationer just nu.
+            </h2></div>
+                <button class="dropbtn button3" onclick="quick()">Donera nu!</button>
                 <div class="dropdown-content">
                     <div class="row options hide">
                         <div class="giftBox column">
@@ -141,7 +132,7 @@
 <footer class="site-footer">
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-sm-6 col-xs-12">
+            <div class="col">
                 <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by
                     <a href="#">Helpify </a>
                 </p>

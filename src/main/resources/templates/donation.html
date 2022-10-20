@@ -23,23 +23,14 @@
     <div class="header1">
         <div class="header-text">
             <thead>
-            <h1 style="font-size:80px">HELPIFY</h1>
-            <th><a href="/">Startsida</a></th>
+            <th><a href="/helpify">Startsida</a></th>
             <th><a href="/signup">Bli Medlem</a></th>
             <th><a href="/organisations">Våra organisationer</a></th>
-            <thdiv class="dropdown">
-                <a class="btn btn-secondary dropdown-toggle" href="/myPage" role="button" data-bs-toggle="dropdown"
-                   aria-expanded="false">
-                    Mina sidor</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/myPage">Mina sidor</a></li>
-                    <li><a class="dropdown-item" href="/stats">Mina donationer</a></li>
-                    <li><a class="dropdown-item" href="/Inställningar">Inställningar</a></li>
-                </ul>
-            </thdiv>
-            <th><a href="/login">Logga in</a></th>
-            <th><a href="/logout">Logga ut</a></th>
-            <th><p th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p></th>
+            <th><a href="/donation">Donera</a></th>
+            <th><a href="/myPage">Mina sidor</a></th>
+            <th th:if="${#httpServletRequest.remoteUser == null}"><a href="/login">Logga in</a></th>
+            <th th:if="${#httpServletRequest.remoteUser}"><a href="/logout">Logga ut</a></th>
+            <th th:if="${#httpServletRequest.remoteUser}"><p th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p></th>
             </thead>
         </div>
     </div>
@@ -67,7 +58,7 @@
 <footer class="site-footer">
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-sm-6 col-xs-12">
+            <div class="col">
                 <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by
                     <a href="#">Helpify </a>
                 </p>

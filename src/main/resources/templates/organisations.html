@@ -14,30 +14,22 @@
     <div class="header1">
         <div class="header-text">
             <thead>
-            <th> <h1 style="font-size:80px">HELPIFY </h1></th>
-            <th><a href="/">Startsida</a></th>
+            <th><a href="/helpify">Startsida</a></th>
             <th><a href="/signup">Bli Medlem</a></th>
-            <div class="dropdown">
-                <a class="btn btn-secondary dropdown-toggle" href="/myPage" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Mina sidor</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/myPage">Mina sidor</a></li>
-                    <li><a class="dropdown-item" href="/stats">Mina donationer</a></li>
-                    <li><a class="dropdown-item" href="/Inställningar">Inställningar</a></li>
-                </ul>
-            </div>
-            <th><a href="/login">Logga in</a></th>
-            <th><a href="/logout">Logga ut</a></th>
-            <th th:if="${#httpServletRequest.remoteUser}"><p class="hStyle" th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></th>
+            <th><a href="/organisations">Våra organisationer</a></th>
+            <th><a href="/donation">Donera</a></th>
+            <th><a href="/myPage">Mina sidor</a></th>
+            <th th:if="${#httpServletRequest.remoteUser == null}"><a href="/login">Logga in</a></th>
+            <th th:if="${#httpServletRequest.remoteUser}"><a href="/logout">Logga ut</a></th>
+            <th th:if="${#httpServletRequest.remoteUser}"><p th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p></th>
             </thead>
         </div>
     </div>
 </header>
-<div class="container organisationTop"> Nu gör vi världen bättre! </br> </div>
+<div class="container organisationTop">  </br> </div>
 
 
 <div class="organisationTop">
-    <h1>Nu gör vi världen bättre! </h1>
     <h2>Vilken fråga brinner du för? Vi hjälper dig att hitta de organisationer du vill stötta!</h2>
 </div>
 <div class="container pt-3 text-center">
@@ -49,12 +41,13 @@
                      th:each="organisation : ${organisations}"></br>
                     <img class="img-fluid" th:src="'images/' + ${organisation.name} + '.png'"> </br>
                     <a th:href="'/organisations/' + ${organisation.id}" th:text="${organisation.name}"></a>
-                    <h4> Om: </h4>
+                    <h4> Om organisationen: </h4>
                     <div th:text="${organisation.description}">
                         <hr/>
                     </div>
                     <div class="row">
-                        <div class="column">
+                        <div class="column donText">
+                           <h4><b> Skriv in belopp som du vill donera</b> </h4>
                             <form action="/organisations" method="POST">
                                 <input type="hidden" name="org" th:value="${organisation.name}">
                                 <input type="number" name="sum" class="orgDonateSum" oninput="orgButtonHide()"/>
@@ -72,7 +65,7 @@
 <footer class="site-footer">
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-sm-6 col-xs-12">
+            <div class="col">
                 <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by
                     <a href="#">Helpify </a>
                 </p>
