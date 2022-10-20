@@ -80,6 +80,7 @@ background-repeat: no-repeat;
   font:Luminari;
   color: #004369;
   padding-bottom: 25px;
+  border-bottom:5px;
   /*
   position: absolute;
   top: 35%;
