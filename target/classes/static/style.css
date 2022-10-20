@@ -130,14 +130,25 @@ font-family: Luminari;
 text-align: center;
 padding: 5px;
 }
+dropdown {
+color: #004369;
+font-size: 23px;
+background-color:white ;
+border-color: #004369;
+font-family: Luminari;
 
+}
 .button3 {
 font-size: 28px;
 color: #004369;
-background: linear-gradient(90deg, hsla(217, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);
+background-color:white;
+border-color: #004369;
 font-family: Luminari;
 }
+button4{
 
+
+}
 .giftbox {
 font-family: Luminari;
 color: #004369;
@@ -151,10 +162,11 @@ font-family: Luminari;
 }
 
 .orgBox {
-margin: 15px;
+margin: 30px;
 background: white;
-padding: 20 px;
+
 }
+
 .donText h4 {
 font-size: 15px;
 color: #004369;
