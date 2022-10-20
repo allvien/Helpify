@@ -13,14 +13,16 @@
 <body>
 
 <header>
+    <img class="logotyp" th:src="'images/HELPIFYy.png'" alt="FöretagsLogo">
     <div class="header1">
+        <th><h1 class="headline">HelpIfy</h1></th>
         <div class="header-text">
             <thead>
-            <th><a href="/helpify">Startsida</a></th>
-            <th><a href="/signup">Bli Medlem</a></th>
-            <th><a href="/organisations">Våra organisationer</a></th>
-            <th><a href="/donation">Donera</a></th>
-            <th><a href="/myPage">Mina sidor</a></th>
+            <th><a href="/helpify">Startsida   </a></th>
+            <th><a href="/signup">Bli Medlem   </a></th>
+            <th><a href="/organisations">Våra organisationer   </a></th>
+            <th><a href="/donation">Donera   </a></th>
+            <th><a href="/myPage">Mina sidor   </a></th>
             <th th:if="${#httpServletRequest.remoteUser == null}"><a href="/login">Logga in</a></th>
             <th th:if="${#httpServletRequest.remoteUser}"><a href="/logout">Logga ut</a></th>
             <th th:if="${#httpServletRequest.remoteUser}"><p th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p></th>
@@ -59,23 +61,19 @@
 </script>
 <h2> </h2>
 -->
-<p> Vi vill ta en stund för att tacka just Dig</p>
-<p th:text="${#httpServletRequest.remoteUser}"></p>
-<p> för att du är medlem hos oss! För varje månad som du är medlem hos oss
-    så bidrar du till att skapa en bättre och friskare värld för både människor som djur och natur.</p>
+<h6>  Vi vill ta en stund för att tacka just Dig</h6>
+<h6 th:text="${#httpServletRequest.remoteUser}"></h6>
+<h6> för att du är medlem hos oss! För varje månad som du är medlem hos oss
+    så bidrar du till att skapa en bättre och friskare värld för både människor som djur och natur.</h6>
 
 
 <div class="row">
-    <div class="column">
-        <img src="https://tfiglobalnews.com/wp-content/uploads/2021/07/sasadgdG-1024x576.jpg" alt="Människorätt" style="width:100%">
+    <div class="row justify-content-around">
+        <div class="col"><img class="Vi bidrar" style="width:70%%" th:src="'images/MypageNew.png'" alt="Bild på vad man kan bidra till">
+        </div>
     </div>
-    <div class="column">
-        <img src="http://ipfactly.com/wp-content/uploads/2015/01/Standing_jaguar1.jpg" alt="Djur och natur" style="width:100%">
-    </div>
-    <div class="column">
-        <img src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-760w,f_auto,q_auto:best/rockcms/2022-02/covid-seattle-childrens-hospital-mc-inline-220202-03-ac61cd.jpg" alt="Läkemedelsforskning" style="width:100%">
-    </div>
-</div>
+
+<
 
 <h3>Dina donationer:</h3>
 <p th:if="${noDonation}" th:text="${'du har inga donationer registrerade'}"></p>
@@ -107,5 +105,6 @@
         </div>
     </div>
 </footer>
+</div>
 </body>
 </html>
