@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Donation</title>
     <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <div th:if="${session.userName} != null">
         <p th:if="${#httpServletRequest.remoteUser}" th:text="'Inloggad som: ' + ${session.userName}"></p>
     </div>
@@ -44,8 +46,11 @@
 </header>
 
 <div class="donationForm">
-    <form action="/donation" method="POST">
-        Summa att donera: <input type="number" name="sum" class="donateSum" oninput="buttonHide()">
+    <form class="donBox col-5 rounded-4" action="/donation" method="POST">
+        <div class="donateSumInput">
+            <span>Summa att donera</span>
+            <input type="number" name="sum" class="donateSum" oninput="buttonHide()">
+        </div>
         <div th:each="organisation : ${organisations}">
             <div>
                 <input type="checkbox" th:id="${organisation.id}" name="organisations"
@@ -53,7 +58,9 @@
                 <label th:for="${organisation.id}" th:text="${organisation.name}"></label>
             </div>
         </div>
-        <input type="submit" value="Donera" class="donateButton" disabled>
+        <div class="donateButtonDiv">
+            <input type="submit" value="Donera" class="donateButton" disabled>
+        </div>
     </form>
 </div>
 

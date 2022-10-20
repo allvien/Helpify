@@ -1,5 +1,5 @@
 .hide {
-    visibility: hidden;
+visibility: hidden;
 }
 
 body {
@@ -146,6 +146,36 @@ font-family: Luminari;
 margin: 15px;
 background: mintcream;
 }
+
+.donateSumInput span {
+font-family: Luminari;
+font-size: 25px;
+color: #004369;
+}
+
+.donBox {
+margin: 15px;
+padding: 20px;
+background: mintcream;
+border:5px solid #004369;
+font-family: Luminari;
+color: #004369;
+}
+
+.donateSumInput, .donateButtonDiv {
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.donateSumInput {
+margin-bottom: 15px;
+}
+
+.donateButtonDiv {
+margin-top: 15px;
+}
+
 /*
 .container row col {
 border: 5px solid #004369;
