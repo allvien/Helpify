@@ -32,6 +32,7 @@ text-decoration:none;
 font-size:20px;
 text-indent:15px;
 color: #004369;
+padding:10px;
 }
 
 h3 {
@@ -79,6 +80,7 @@ background-repeat: no-repeat;
   font:Luminari;
   color: #004369;
   padding-bottom: 25px;
+  border-bottom:5px;
   /*
   position: absolute;
   top: 35%;
@@ -87,18 +89,34 @@ background-repeat: no-repeat;
   color: white;
   margin-bottom:75px;*/
 }
-.logotyp{
-height:100px;
-width:100px;
-position:center;
-border-radius:50%
-}
- .headline {
- color:  #004369;;
+.headline {
+ position:relative;
+ color: #004369;;
  font-size:100px;
  font:Luminari;
  }
 
+.logotyp{
+position:absolute;
+align-items:50%;
+height:100px;
+width:100px;
+border-radius:50%;
+left:450px;
+top:15px;
+}
+
+.column {
+  float: left;
+  width: 30%;
+  padding: 5px;
+}
+Clear floats after image containers
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 .presentation {
 /*margin-left: 800px; */
 background: linear-gradient(90deg, hsla(277, 79%, 84%, 1) 0%, hsla(204, 95%, 77%, 1) 100%);
@@ -147,7 +165,7 @@ color: #004369;
 font-size: 20px;
 background: linear-gradient(90deg, hsla(277, 79%, 84%, 1) 0%, hsla(204, 95%, 77%, 1) 100%);
 
-padding: 15px;
+padding: 5px;
  border-color: #004369;
 }
 
@@ -281,11 +299,6 @@ margin-bottom: 15px;
 margin-top: 15px;
 }
 
-/*
-.container row col {
-border: 5px solid #004369;
-} */
-
 .picture {
 width: 350px;
 height: 200px;
@@ -316,6 +329,19 @@ font-size: 60px;
 text-decoration-line: underline;
 
 
+}
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 25%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
 /*a:link {
