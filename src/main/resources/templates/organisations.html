@@ -33,7 +33,7 @@
         </div>
     </div>
 </header>
-<div class="container organisationTop"> Nu gör vi världen bättre! </br> </div>
+<div class="container organisationTop">  </br> </div>
 
 
 <div class="organisationTop">
@@ -54,7 +54,8 @@
                         <hr/>
                     </div>
                     <div class="row">
-                        <div class="column">
+                        <div class="column donText">
+                           <h4><b> Skriv in belopp som du vill donera</b> </h4>
                             <form action="/organisations" method="POST">
                                 <input type="hidden" name="org" th:value="${organisation.name}">
                                 <input type="number" name="sum" class="orgDonateSum" oninput="orgButtonHide()"/>
