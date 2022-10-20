@@ -26,30 +26,28 @@
         </div>
     </div>
 </header>
+<div class="text2">
+<span>Bli medlem och kom igång med dina donationer idag. Enkelt, smidigt och säkert!</span>
+</div>
+
 
 <div class="formContainer">
-    <form th:action="@{/signup}" method="post" th:object="${user}" class="form">
-        <p th:if="${#fields.hasErrors('firstName')}">Förnamn är inte ifyllt</p>
-        <label for="firstName">Förnamn</label>
-        <input type="text" th:field="*{firstName}" th:errorclass="error" id="firstName"/>
+    <form class="form" th:action="@{/signup}" method="post" th:object="${user}">
+        <p class="error2" th:if="${#fields.hasErrors('firstName')}">Förnamn är inte ifyllt</p>
+        <input class="input2" type="text" th:field="*{firstName}" th:errorclass="error" id="firstName" placeholder="Förnamn"/>
 
-        <p th:if="${#fields.hasErrors('lastName')}">Efternamn är inte ifyllt</p>
-        <label for="lastName">Efternamn</label>
-        <input type="text" th:field="*{lastName}" th:errorclass="error" id="lastName"/>
+        <p class="error2" th:if="${#fields.hasErrors('lastName')}">Efternamn är inte ifyllt</p>
+        <input class="input2" type="text" th:field="*{lastName}" th:errorclass="error" id="lastName" placeholder="Efternamn"/>
 
-        <p th:if="${#fields.hasErrors('email')}">Inkorrekt email</p>
-        <label for="email">Email</label>
-        <input type="email" th:field="*{email}" th:errorclass="error" id="email"/>
+        <input class="input2" type="email" th:field="*{email}" th:errorclass="error" id="email" placeholder="Email"/>
 
-        <p th:if="${#fields.hasErrors('userName')}">Användarnamnet ska vara mellan 4-12 bokstäver</p>
-        <label for="userName">Användarnamn</label>
-        <input type="text" th:field="*{userName}" th:errorclass="error" id="userName"/>
+        <p class="error2" th:if="${#fields.hasErrors('userName')}">Användarnamnet ska vara mellan 4-12 bokstäver</p>
+        <input class="input2" type="text" th:field="*{userName}" th:errorclass="error" id="userName" placeholder="Användarnamn"/>
 
-        <p th:if="${#fields.hasErrors('password')}">Lösenordet ska vara minst 6 tecken</p>
-        <label for="password">Lösenord</label>
-        <input type="password" th:field="*{password}" th:errorclass="error" id="password"/>
+        <p class="error2" th:if="${#fields.hasErrors('password')}">Lösenordet ska vara minst 6 tecken</p>
+        <input class="input2" type="password" th:field="*{password}" th:errorclass="error" id="password" placeholder="Lösenord"/>
 
-        <input type="submit" value="Spara"/>
+        <input class="button2" type="submit" value="Skapa konto"/>
     </form>
 </div>
 
