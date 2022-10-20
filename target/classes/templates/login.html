@@ -4,27 +4,24 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <header>
     <div class="header1">
         <div class="header-text">
             <thead>
-            <h1 style="font-size:80px">HELPIFY</h1>
-            <th><a href="/">Startsida</a></th>
+            <th><a href="/helpify">Startsida</a></th>
             <th><a href="/signup">Bli Medlem</a></th>
             <th><a href="/organisations">Våra organisationer</a></th>
             <th><a href="/donation">Donera</a></th>
-            <thdiv class="dropdown">
-                <a class="btn btn-secondary dropdown-toggle" href="/myPage" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Mina sidor</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/myPage">Mina sidor</a></li>
-                    <li><a class="dropdown-item" href="/stats">Mina donationer</a></li>
-                    <li><a class="dropdown-item" href="/Inställningar">Inställningar</a></li>
-                </ul>
-            </thdiv>
-            <th><a href="/logout">Logga ut</a></th>
+            <th><a href="/myPage">Mina sidor</a></th>
+            <th th:if="${#httpServletRequest.remoteUser}"><a href="/logout">Logga ut</a></th>
+            <th th:if="${#httpServletRequest.remoteUser}"><p th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p></th>
+            </thead>
         </div>
     </div>
 </header>
