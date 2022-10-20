@@ -1,5 +1,5 @@
 .hide {
-    visibility: hidden;
+visibility: hidden;
 }
 
 body {
@@ -38,26 +38,26 @@ font-size: 10px;
 color: #0E2A36;
 font-family: Arial;
 text-align: center;
- }
+}
 
- h4 {
+h4 {
  font-size: 15px;
  color: #0E2A36;
  font-family: Arial;
  text-align: center;
- }
+}
 h6 {
 font-size: 25px;
  color: #004369;
  font-family: Arial;
  text-align: center;
 }
- p {
+p {
  font-size: 15px;
  color: white;
  font-family: Arial;
  text-align: center;
- }
+}
 
 .header1 {
   background: url('/images/HELPIFYAVL.png');
@@ -154,15 +154,76 @@ color: #004369;
 font-family: Luminari;
 }
 
+.donationForm {
+display: flex;
+justify-content: center;
+padding:
+}
+
+.donInfo {
+font-family: Luminari;
+font-size: 20px;
+color: #004369;
+margin: 15px;
+margin-top: 30px;
+}
+
 .orgBox {
 margin: 15px;
 background: white;
 padding: 20 px;
 }
+
 .donText h4 {
 font-size: 15px;
 color: #004369;
 }
+
+.donateSumInput span {
+font-family: Luminari;
+font-size: 25px;
+color: #004369;
+}
+
+.donateSum {
+height:40px;
+font-size:25px;
+}
+
+.donationCheck {
+height: 15px;
+width: 15px;
+}
+
+.donateButton {
+height: 50px;
+font-size: 25px;
+}
+
+.donBox {
+width:40%;
+margin: 15px;
+padding: 20px;
+background: mintcream;
+border:5px solid #004369;
+font-family: Luminari;
+color: #004369;
+}
+
+.donateSumInput, .donateButtonDiv {
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.donateSumInput {
+margin-bottom: 15px;
+}
+
+.donateButtonDiv {
+margin-top: 15px;
+}
+
 /*
 .container row col {
 border: 5px solid #004369;
@@ -236,11 +297,6 @@ background: linear-gradient(90deg, hsla(277, 79%, 84%, 1) 0%, hsla(204, 95%, 77%
    text-align: center;
 }
 
-.donationForm {
-    display: flex;
-    justify-content: center;
-}
-
 /*
 Color scheme:
     Blue: #3190B5
@@ -265,6 +321,7 @@ Color scheme:
   padding: 5px;
 }
 
+.picture1
 
 /***** Styling for all pages *****/
 /*

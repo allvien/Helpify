@@ -154,11 +154,26 @@ color: #004369;
 font-family: Luminari;
 }
 
+.donationForm {
+display: flex;
+justify-content: center;
+padding:
+}
+
+.donInfo {
+font-family: Luminari;
+font-size: 20px;
+color: #004369;
+margin: 15px;
+margin-top: 30px;
+}
+
 .orgBox {
 margin: 15px;
 background: white;
 padding: 20 px;
 }
+
 .donText h4 {
 font-size: 15px;
 color: #004369;
@@ -170,7 +185,23 @@ font-size: 25px;
 color: #004369;
 }
 
+.donateSum {
+height:40px;
+font-size:25px;
+}
+
+.donationCheck {
+height: 15px;
+width: 15px;
+}
+
+.donateButton {
+height: 50px;
+font-size: 25px;
+}
+
 .donBox {
+width: 40%;
 margin: 15px;
 padding: 20px;
 background: mintcream;
@@ -264,11 +295,6 @@ background: linear-gradient(90deg, hsla(277, 79%, 84%, 1) 0%, hsla(204, 95%, 77%
     /* Button for newsletter sign-up in the footer*/
   background: linear-gradient(90deg, hsla(217, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);
    text-align: center;
-}
-
-.donationForm {
-    display: flex;
-    justify-content: center;
 }
 
 /*
