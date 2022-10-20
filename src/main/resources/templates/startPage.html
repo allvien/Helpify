@@ -17,14 +17,16 @@
     </div>
 </div> -->
 <header>
+    <img class="logotyp" th:src="'images/HELPIFY.png'" alt="FöretagsLogo">
     <div class="header1">
+        <th><h1 class="headline">HelpIfy</h1></th>
         <div class="header-text">
             <thead>
-            <th><a href="/helpify">Startsida</a></th>
-            <th><a href="/signup">Bli Medlem</a></th>
-            <th><a href="/organisations">Våra organisationer</a></th>
-            <th><a href="/donation">Donera</a></th>
-            <th><a href="/myPage">Mina sidor</a></th>
+            <th><a href="/helpify">Startsida   </a></th>
+            <th><a href="/signup">Bli Medlem   </a></th>
+            <th><a href="/organisations">Våra organisationer   </a></th>
+            <th><a href="/donation">Donera   </a></th>
+            <th><a href="/myPage">Mina sidor   </a></th>
             <th th:if="${#httpServletRequest.remoteUser == null}"><a href="/login">Logga in</a></th>
             <th th:if="${#httpServletRequest.remoteUser}"><a href="/logout">Logga ut</a></th>
             <th th:if="${#httpServletRequest.remoteUser}"><p th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p></th>
@@ -91,34 +93,35 @@
                 <br> <div> <h1>Vill du också vara med och bidra? </h1>
           <h2>  Vi vet att tiden inte alltid finns. Du kanske inte har tid att skapa ett konto just idag. Genom vår snabbdonation kan du snabbt ge en gåva utan att ha ett medlemskap. Klicka på knappen nedan för att ge ett bidrag till någon av våra tre mest behövande organisationer just nu.
             </h2></div>
-                <button class="dropbtn button3" onclick="quick()">Donera nu!</button>
+                <button class="dropbtn button3 rounded-1" onclick="quick()">Donera nu!</button>
+                </br></br>
                 <div class="dropdown-content">
                     <div class="row options hide">
-                        <div class="giftBox column">
+                        <div class="giftBox column" >
                             <form action="/" method="POST">
                                 <input type="hidden" name="organisation" value="WWF">
                                 <h3>WWF</h3>
-                                <input type="submit" name="Kr" Value="100"/>
-                                <input type="submit" name="Kr" Value="250"/>
-                                <input type="submit" name="Kr" Value="500"/>
-                            </form>
+                                <input type="submit" name="Kr" Value="100" style="background-color:white; border:solid 2px; border-color:#004369;"/>
+                                <input type="submit" name="Kr" Value="250"style="background-color:white; border:solid 2px; border-color:#004369;"/>
+                                <input type="submit" name="Kr" Value="500"style="background-color:white; border:solid 2px; border-color:#004369;"/>
+                            </form></br>
                         </div>
                         <div class="giftBox column">
                             <form action="/" method="POST">
                                 <input type="hidden" name="organisation" value="NATURSKYDDSFÖRENINGEN">
                                 <h3>NATURSKYDDSFÖRENINGEN</h3>
-                                <input type="submit" name="Kr" Value="100"/>
-                                <input type="submit" name="Kr" Value="250"/>
-                                <input type="submit" name="Kr" Value="500"/>
-                            </form>
+                                <input type="submit" name="Kr" Value="100"style="background-color:white; border:solid 2px; border-color:#004369;"/>
+                                <input type="submit" name="Kr" Value="250"style="background-color:white; border:solid 2px; border-color:#004369;"/>
+                                <input type="submit" name="Kr" Value="500"style="background-color:white; border:solid 2px; border-color:#004369;"/>
+                            </form> </br>
                         </div>
                         <div class="giftBox column">
                             <form action="/" method="POST">
                                 <input type="hidden" name="organisation" value="RESCUE">
                                 <h3>RESCUE</h3>
-                                <input type="submit" name="Kr" Value="100"/>
-                                <input type="submit" name="Kr" Value="250"/>
-                                <input type="submit" name="Kr" Value="500"/>
+                                <input type="submit" name="Kr" Value="100"style="background-color:white; border:solid 2px; border-color:#004369;"/>
+                                <input type="submit" name="Kr" Value="250"style="background-color:white; border:solid 2px;border-color:#004369;"/>
+                                <input type="submit" name="Kr" Value="500"style="background-color:white; border:solid 2px; border-color:#004369;"/>
                             </form>
                         </div>
                     </div>
