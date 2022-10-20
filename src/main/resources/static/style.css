@@ -152,7 +152,8 @@ font-family: Luminari;
 
 .orgBox {
 margin: 15px;
-background: mintcream;
+background: white;
+padding: 20 px;
 }
 /*
 .container row col {

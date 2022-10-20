@@ -49,7 +49,7 @@
                      th:each="organisation : ${organisations}"></br>
                     <img class="img-fluid" th:src="'images/' + ${organisation.name} + '.png'"> </br>
                     <a th:href="'/organisations/' + ${organisation.id}" th:text="${organisation.name}"></a>
-                    <h4> Om: </h4>
+                    <h4> Om organisationen: </h4>
                     <div th:text="${organisation.description}">
                         <hr/>
                     </div>
@@ -72,7 +72,7 @@
 <footer class="site-footer">
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-sm-6 col-xs-12">
+            <div class="col">
                 <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by
                     <a href="#">Helpify </a>
                 </p>
