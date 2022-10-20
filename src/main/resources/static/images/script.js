@@ -1,15 +1,13 @@
 
-const options = document.querySelector(".options")
-const donationButton = document.querySelector("input.donateButton")
-const orgDonationButton = document.querySelector("input.orgDonateButton")
-
 function quick() {
+    const options = document.querySelector(".options")
     options.classList.toggle("hide")
 }
 
 function buttonHide() {
     const sum = document.querySelector('input.donateSum').value;
     const checkList = document.querySelectorAll('input.donationCheck');
+    const donationButton = document.querySelector("input.donateButton")
     donationButton.disabled = true
     let checkMark = false
 
@@ -26,10 +24,15 @@ function buttonHide() {
 }
 
 function orgButtonHide() {
-    const orgSum = document.querySelector('input.orgDonateSum').value;
-    orgDonationButton.disabled = true
+    const orgSumList = document.querySelectorAll('input.orgDonateSum');
+    const orgButtonList = document.querySelectorAll('input.orgDonateButton')
 
-    if (orgSum > 0) {
-        orgDonationButton.disabled = false
+    console.log(orgButtonList)
+    for (let i = 0; i < orgSumList.length; i++) {
+        orgButtonList[i].disabled = true
+
+        if (orgSumList[i].value > 0) {
+                orgButtonList[i].disabled = false
+            }
     }
 }
