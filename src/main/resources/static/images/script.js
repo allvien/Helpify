@@ -7,7 +7,9 @@ function quick() {
 function buttonHide() {
     const sum = document.querySelector('input.donateSum').value;
     const checkList = document.querySelectorAll('input.donationCheck');
-    const donationButton = document.querySelector("input.donateButton")
+    const donationButton = document.querySelector('input.donateButton')
+    donationButton.classList.remove("donateButtonActive")
+    donationButton.classList.remove("rounded-1")
     donationButton.disabled = true
     let checkMark = false
 
@@ -20,6 +22,9 @@ function buttonHide() {
 
     if (sum > 0 && checkMark) {
         donationButton.disabled = false
+        donationButton.classList.add("donateButtonActive")
+        donationButton.classList.add("rounded-1")
+
     }
 }
 
