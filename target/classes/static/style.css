@@ -102,7 +102,7 @@ padding: 15px;
 }
 
 .totalSum {
-font-size:300px;
+font-size:250px;
 background: linear-gradient(90deg, hsla(277, 79%, 84%, 1) 0%, hsla(204, 95%, 77%, 1) 100%);
 color: #004369;
 font-family: Luminari;
@@ -112,22 +112,47 @@ padding: 5px;
 text-decoration-line: underline;
 }
 
+.dropdown1 h1 {
+color: #004369;
+text-align: center;
+font-size: 35px;
+}
+.dropdown1 h2 {
+color: #004369;
+text-align: center;
+font-size: 20px;
+}
+
 .dropdown1 {
 background: linear-gradient(90deg, hsla(277, 79%, 84%, 1) 0%, hsla(204, 95%, 77%, 1) 100%);
 color: #004369;
 font-family: Luminari;
 text-align: center;
 padding: 5px;
-font-size: 45px;
 }
 
-.giftBox {
-font-size: 20px;
+.button3 {
+font-size: 28px;
+color: #004369;
+background: linear-gradient(90deg, hsla(217, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);
+font-family: Luminari;
+}
+
+.giftbox {
+font-family: Luminari;
+color: #004369;
+font-size: 15px;
+
+}
+.giftBox h3{
+font-size: 25px;
+color: #004369;
+font-family: Luminari;
 }
 
 .orgBox {
 margin: 15px;
-background: mintcream;
+background: white;
 }
 /*
 .container row col {
@@ -190,17 +215,20 @@ background-color: #a7d2dd;
 footer {
 background: linear-gradient(90deg, hsla(277, 79%, 84%, 1) 0%, hsla(204, 95%, 77%, 1) 100%);
     padding: 25px;
+    justify-content: center;
     text-align: center;
 }
 
 #footerbtn {
     /* Button for newsletter sign-up in the footer*/
   background: linear-gradient(90deg, hsla(217, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);
-
    text-align: center;
 }
 
-
+.donationForm {
+    display: flex;
+    justify-content: center;
+}
 
 /*
 Color scheme:
@@ -210,6 +238,7 @@ Color scheme:
     Green: #257D5E          (e.g. logo)
     Yellow: #FFDD5C         (e.g. for alerts)
 */
+
 
 
 /*
@@ -355,3 +384,16 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 } */
+
+/**** SAVE USER ***/
+.formContainer {
+    display: flex;
+}
+
+.form {
+    flex-direction: block;
+}
+
+.saveuserbody {
+    background-color: aqua;
+}

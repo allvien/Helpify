@@ -4,12 +4,9 @@
     <meta charset="UTF-8">
     <title>Spara användare</title>
     <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'">
-  <!--  <p th:text="'Inloggad som: ' + ${session.userName}"></p>
-    <form th:action="@{/logout}" method="post">
-        <input type="submit" value="Logout"/>
-    </form> -->
+    <link rel="stylesheet" href="../static/saveUserStyle1.css" th:href="'/saveUserStyle1.css'">
 </head>
-<body>
+<body class="saveuserbody">
 <header>
     <div class="header1">
         <div class="header-text">
@@ -17,7 +14,8 @@
             <h1 style="font-size:80px">HELPIFY</h1>
             <th><a href="/">Startsida</a></th>
             <th class="dropdown">
-                <a class="btn btn-secondary dropdown-toggle" href="/myPage" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="btn btn-secondary dropdown-toggle" href="/myPage" role="button" data-bs-toggle="dropdown"
+                   aria-expanded="false">
                     Mina sidor</a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="/myPage">Mina sidor</a></li>
@@ -27,43 +25,43 @@
             </th>
             <th><a href="/login">Logga in</a></th>
             <th><a href="/logout">Logga ut</a></th>
-            <th><p th:if="${#httpServletRequest.remoteUser}" th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p></th>
+            <th><p th:if="${#httpServletRequest.remoteUser}"
+                   th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p></th>
             </thead>
         </div>
     </div>
 </header>
 
-<form th:action="@{/signup}" method="post" th:object="${user}">
-    <p th:if="${#fields.hasErrors('firstName')}">Förnamn är inte ifyllt</p>
-    <label for="firstName">Förnamn</label>
-    <input type="text" th:field="*{firstName}" th:errorclass="error" id="firstName"/>
+<div class="formContainer">
+    <form th:action="@{/signup}" method="post" th:object="${user}" class="form">
+        <p th:if="${#fields.hasErrors('firstName')}">Förnamn är inte ifyllt</p>
+        <label for="firstName">Förnamn</label>
+        <input type="text" th:field="*{firstName}" th:errorclass="error" id="firstName"/>
 
-    <p th:if="${#fields.hasErrors('lastName')}">Efternamn är inte ifyllt</p>
-    <label for="lastName">Efternamn</label>
-    <input type="text" th:field="*{lastName}"th:errorclass="error" id="lastName"/>
+        <p th:if="${#fields.hasErrors('lastName')}">Efternamn är inte ifyllt</p>
+        <label for="lastName">Efternamn</label>
+        <input type="text" th:field="*{lastName}" th:errorclass="error" id="lastName"/>
 
-    <p th:if="${#fields.hasErrors('email')}">Inkorrekt email</p>
-    <label for="email">Email</label>
-    <input type="email" th:field="*{email}" th:errorclass="error" id="email"/>
+        <p th:if="${#fields.hasErrors('email')}">Inkorrekt email</p>
+        <label for="email">Email</label>
+        <input type="email" th:field="*{email}" th:errorclass="error" id="email"/>
 
-    <p th:if="${#fields.hasErrors('userName')}">Användarnamnet ska vara mellan 4-12 bokstäver</p>
-    <label for="userName">Användarnamn</label>
-    <input type="text" th:field="*{userName}" th:errorclass="error" id="userName"/>
+        <p th:if="${#fields.hasErrors('userName')}">Användarnamnet ska vara mellan 4-12 bokstäver</p>
+        <label for="userName">Användarnamn</label>
+        <input type="text" th:field="*{userName}" th:errorclass="error" id="userName"/>
 
-    <p th:if="${#fields.hasErrors('password')}">Lösenordet ska vara minst 6 tecken</p>
-    <label for="password">Lösenord</label>
-    <input type="password" th:field="*{password}" th:errorclass="error" id="password"/>
+        <p th:if="${#fields.hasErrors('password')}">Lösenordet ska vara minst 6 tecken</p>
+        <label for="password">Lösenord</label>
+        <input type="password" th:field="*{password}" th:errorclass="error" id="password"/>
 
-
-    <input type="submit" value="Spara"/>
-
-
-</form>
+        <input type="submit" value="Spara"/>
+    </form>
+</div>
 
 <footer class="site-footer">
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-sm-6 col-xs-12">
+            <div class="col">
                 <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by
                     <a href="#">Helpify </a>
                 </p>

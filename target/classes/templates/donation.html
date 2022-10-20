@@ -15,7 +15,6 @@
     <form th:action="@{/logout}" method="post">
         <input type="submit" value="Logga ut"/>
     </form>
-    <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'">
 </head>
 <body>
 <header>
@@ -27,7 +26,8 @@
             <th><a href="/signup">Bli Medlem</a></th>
             <th><a href="/organisations">Våra organisationer</a></th>
             <thdiv class="dropdown">
-                <a class="btn btn-secondary dropdown-toggle" href="/myPage" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="btn btn-secondary dropdown-toggle" href="/myPage" role="button" data-bs-toggle="dropdown"
+                   aria-expanded="false">
                     Mina sidor</a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="/myPage">Mina sidor</a></li>
@@ -43,17 +43,20 @@
     </div>
 </header>
 
-<form action="/donation" method="POST">
-    Summa att donera: <input type="number" name="sum" class="donateSum" oninput="buttonHide()">
-    <div th:each="organisation : ${organisations}">
-        <div>
-            <input type="checkbox" th:id="${organisation.id}" name="organisations"
-                   class="donationCheck" onchange="buttonHide()" th:value="${organisation.id}">
-            <label th:for="${organisation.id}" th:text="${organisation.name}"></label>
+<div class="donationForm">
+    <form action="/donation" method="POST">
+        Summa att donera: <input type="number" name="sum" class="donateSum" oninput="buttonHide()">
+        <div th:each="organisation : ${organisations}">
+            <div>
+                <input type="checkbox" th:id="${organisation.id}" name="organisations"
+                       class="donationCheck" onchange="buttonHide()" th:value="${organisation.id}">
+                <label th:for="${organisation.id}" th:text="${organisation.name}"></label>
+            </div>
         </div>
-    </div>
-    <input type="submit" value="Donera" class="donateButton" disabled>
-</form>
+        <input type="submit" value="Donera" class="donateButton" disabled>
+    </form>
+</div>
+
 <footer class="site-footer">
     <div class="container">
         <div class="row">

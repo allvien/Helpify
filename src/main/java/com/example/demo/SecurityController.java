@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.beans.Encoder;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -21,8 +22,6 @@ public class SecurityController {
 
     @Autowired
     private UserRepository userRepo;
-    @Autowired
-    private DonationRepository donRepo;
     @Autowired
     PasswordEncoder encoder;
 
@@ -57,14 +56,6 @@ public class SecurityController {
 
     @GetMapping("/myPage")
     public String myPage(HttpSession session, HttpServletRequest request, Model model) {
-       /* String userName = request.getRemoteUser();
-        for (User user : userRepo.findAll()) {
-            if (user.getUserName().equals(userName)) {
-                model.addAttribute("user", user);
-                session.setAttribute("userName", user.getUserName());
-                session.setAttribute("password", user.getPassword());
-            }
-        } */
         String userName = request.getRemoteUser();
         if (userName == null) {
             return "login";
@@ -72,6 +63,29 @@ public class SecurityController {
         User user = userRepo.findByUserName(userName);
 
         model.addAttribute("user", user);
+
+        List<Donation> donations = new ArrayList<>();
+        //for (Donation donation: donations) {
+        //}
+        //fylla donationslistan. loopa user.donations. finns organisation i user donations? om inte skapa objekt som adderas i -->
+        //donationslista summerad
+
+        for (Donation donation : user.getDonations()) {
+            boolean foundDonation = false;
+
+            for (Donation don : donations) {
+                if (donation.getOrganisation().getId() == don.getOrganisation().getId()) {
+                    don.setSum(donation.getSum() + don.getSum());
+                    foundDonation = true;
+                }
+            }
+            if (!foundDonation) {
+                donations.add(donation);
+            }
+        }
+
+        model.addAttribute("donations", donations);
+        //list user donations
         if (user.getDonations().isEmpty()){
             model.addAttribute("noDonation", user.getDonations());
         }

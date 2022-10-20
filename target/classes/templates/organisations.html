@@ -34,29 +34,34 @@
         </div>
     </div>
 </header>
+<div class="container organisationTop"> Nu gör vi världen bättre! </br> </div>
+
 
 <div class="organisationTop">
     <h1>Nu gör vi världen bättre!</h1>
     <h2>Vilken fråga brinner du för? Vi hjälper dig att hitta de organisationer du vill stötta!</h2>
 </div>
-<div class="container pt-3 text-center ">
+<div class="container pt-3 text-center">
     <div class="row">
-        <div class="col-6 rounded-4"style="border:5px solid #004369"  th:each="organisation : ${organisations}">
-            <img class="picture" th:src="'images/' + ${organisation.name} + '.png'"> </br>
-            <a th:href="'/organisations/' + ${organisation.id}" th:text="${organisation.name}"></a>
-            <h4> Om: </h4>
-            <div th:text="${organisation.description}">
-                <hr/>
-            </div>
-            <button class="dropbtn" type="button" onclick="quick()">Donera</button>
-            <div class="dropdown-content">
-                <div class="row options hide">
-                    <div class="column">
-                        <form action="/organisations" method="POST">
-                            <input type="hidden" name="org" th:value="${organisation.name}">
-                            <input type="number" name="sum"/>
-                            <input type="submit" value="Donera">
-                        </form>
+        <div class="container text-center ">
+            <div class="row row-cols-4 ">
+
+                <div class="orgBox col-5 rounded-4" style="border:5px solid #004369"
+                     th:each="organisation : ${organisations}"></br>
+                    <img class="img-fluid" th:src="'images/' + ${organisation.name} + '.png'"> </br>
+                    <a th:href="'/organisations/' + ${organisation.id}" th:text="${organisation.name}"></a>
+                    <h4> Om: </h4>
+                    <div th:text="${organisation.description}">
+                        <hr/>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <form action="/organisations" method="POST">
+                                <input type="hidden" name="org" th:value="${organisation.name}">
+                                <input type="number" name="sum" class="orgDonateSum" oninput="orgButtonHide()"/>
+                                <input type="submit" value="Donera" class="orgDonateButton" disabled>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -77,9 +82,9 @@
     </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous"></script>
-<script src="/images/script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+                crossorigin="anonymous"></script>
+        <script src="/images/script.js"></script>
 </body>
 </html>
