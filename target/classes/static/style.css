@@ -200,7 +200,10 @@ background: linear-gradient(90deg, hsla(277, 79%, 84%, 1) 0%, hsla(204, 95%, 77%
    text-align: center;
 }
 
-
+.donationForm {
+    display: flex;
+    justify-content: center;
+}
 
 /*
 Color scheme:
@@ -210,6 +213,7 @@ Color scheme:
     Green: #257D5E          (e.g. logo)
     Yellow: #FFDD5C         (e.g. for alerts)
 */
+
 
 
 /*
@@ -355,3 +359,16 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 } */
+
+/**** SAVE USER ***/
+.formContainer {
+    display: flex;
+}
+
+.form {
+    flex-direction: block;
+}
+
+.saveuserbody {
+    background-color: aqua;
+}

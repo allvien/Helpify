@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title> Mina sidor </title>
-   <!-- <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'"> -->
+    <!-- <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'"> -->
     <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -21,7 +21,8 @@
             <th><a href="/organisations">Våra organisationer</a></th>
             <th><a href="/donation">Donera</a></th>
             <thdiv class="dropdown">
-                <a class="btn btn-secondary dropdown-toggle" href="/myPage" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="btn btn-secondary dropdown-toggle" href="/myPage" role="button" data-bs-toggle="dropdown"
+                   aria-expanded="false">
                     Mina sidor</a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="/myPage">Mina sidor</a></li>
@@ -30,7 +31,8 @@
                 </ul>
             </thdiv>
             <th><a href="/logout">Logga ut</a></th>
-            <p th:if="${#httpServletRequest.remoteUser}" th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p>
+            <p th:if="${#httpServletRequest.remoteUser}"
+               th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p>
             </thead>
         </div>
     </div>
@@ -66,33 +68,39 @@
 </script>
 <h2> </h2>
 -->
-<p> Vi vill ta en stund för att tacka just Dig (lägg in session.userName för att du är medlem hos oss! För varje månad som du är medlem hos oss </br>
-    så bidrar du till att skapa en bättre och friskare värld för både människor som djur och natur.  </p>
+<p> Vi vill ta en stund för att tacka just Dig</p>
+<p th:text="${#httpServletRequest.remoteUser}"></p>
+<p> för att du är medlem hos oss! För varje månad som du är medlem hos oss
+    så bidrar du till att skapa en bättre och friskare värld för både människor som djur och natur.</p>
 
 
 <div class="row">
     <div class="column">
-        <img class="picture1" src="https://tfiglobalnews.com/wp-content/uploads/2021/07/sasadgdG-1024x576.jpg" alt="Människorätt" style="width:100%">
+        <img class="picture1" src="https://tfiglobalnews.com/wp-content/uploads/2021/07/sasadgdG-1024x576.jpg"
+             alt="Människorätt" style="width:100%">
     </div>
     <div class="column">
-        <img class="picture1" src="http://ipfactly.com/wp-content/uploads/2015/01/Standing_jaguar1.jpg" alt="Djur och natur" style="width:100%">
+        <img class="picture1" src="http://ipfactly.com/wp-content/uploads/2015/01/Standing_jaguar1.jpg"
+             alt="Djur och natur" style="width:100%">
     </div>
     <div class="column">
-        <img class="picture1" src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-760w,f_auto,q_auto:best/rockcms/2022-02/covid-seattle-childrens-hospital-mc-inline-220202-03-ac61cd.jpg" alt="Läkemedelsforskning" style="width:100%">
+        <img class="picture1"
+             src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-760w,f_auto,q_auto:best/rockcms/2022-02/covid-seattle-childrens-hospital-mc-inline-220202-03-ac61cd.jpg"
+             alt="Läkemedelsforskning" style="width:100%">
     </div>
 </div>
 
 <h3>Dina donationer:</h3>
-<p th:object="${user}" th:if="${noDonation}" th:text="${'du har inga donationer registrerade'}"></p>
-    <form th:object="${user}" th:if="${noDonation == null}">
-        <table>
+<p th:if="${noDonation}" th:text="${'du har inga donationer registrerade'}"></p>
+<form th:if="${noDonation == null}">
+    <table>
         <tbody>
         <tr>
             <th>Organisation</th>
             <th>summa</th>
         </tr>
 
-        <tr th:each="donation: ${user.donations}">
+        <tr th:each="donation : ${donations}">
             <td th:text="${donation.organisation.name}"></td>
             <td th:text="${donation.sum} + 'sek'"></td>
         </tr>
