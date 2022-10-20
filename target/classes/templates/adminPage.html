@@ -19,7 +19,7 @@
         <th><a href="/">Startsida</a></th>
         <th><a href="/donation">Donera</a></th>
         <th><a href="/organisations">Våra Organisationer</a></th>
-        <th><a href="/signup">Bli Medlem</a></th>
+        <!--<th><a href="/signup">Bli Medlem</a></th> -->
         <thdiv class="dropdown">
             <a class="btn btn-secondary dropdown-toggle" href="/myPage" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Mina sidor</a>
@@ -29,9 +29,8 @@
                 <li><a class="dropdown-item" href="/Inställningar">Inställningar</a></li>
             </ul>
         </thdiv>
-        <th><a href="/login">Logga in</a></th>
         <th><a href="/logout">Logga ut</a></th>
-        <th><p th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p></th>
+        <th th:if="${#httpServletRequest.remoteUser}"><p th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p></th>
         </thead>
     </div>
 </div>

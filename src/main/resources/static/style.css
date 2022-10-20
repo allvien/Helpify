@@ -12,7 +12,7 @@ font-family: Arial;
 }
 
 
- h1 {
+h1 {
  text-align: center;
  font-size: 30px;
  color: #004369;
@@ -27,40 +27,44 @@ h2 {
  text-align: center;
  }
 
+.header-text a {
+text-decoration:none;
+font-size:20px;
+text-indent:15px;
+}
+
 h3 {
 font-size: 10px;
 color: #0E2A36;
 font-family: Arial;
 text-align: center;
- }
+}
 
- h4 {
+h4 {
  font-size: 15px;
  color: #0E2A36;
  font-family: Arial;
  text-align: center;
- }
+}
 h6 {
 font-size: 25px;
  color: #004369;
  font-family: Arial;
  text-align: center;
 }
- p {
+p {
  font-size: 15px;
  color: white;
  font-family: Arial;
  text-align: center;
- }
+}
 
 .header1 {
   background: url('/images/HELPIFYAVL.png');
   background-color: #a7d2dd;
-  background-attachement: scroll;
-  height: 350px;
-  background-position: center center;
+  height: 125px;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 600px;
   position: relative;
   padding: 5px;
 }
@@ -197,6 +201,9 @@ height: 200px;
 .myPage picture1 {
 width: 5%;
 height: 5%;
+float: left;
+width: 30%;
+padding: 5px;
 }
 
 .bidrar row {
@@ -218,7 +225,7 @@ text-decoration-line: underline;
 
 }
 
-a:link {
+/*a:link {
 color:rgb(47, 16, 133);
 background-color: #a7d2dd;}
 
@@ -238,8 +245,7 @@ background-color: #a7d2dd;
 a:active {
 color:rgb(47, 16, 133);
 background-color: #a7d2dd;
-
-}
+}*/
 
 /* Footer */
 footer {
@@ -271,23 +277,20 @@ Color scheme:
 
 
 
-/*
- Three image containers (use 25% for four, and 50% for two, etc)
-.column {
-  float: left;
-  width: 30%;
+
+/*Three image containers (use 25% for four, and 50% for two, etc)*/
+
+
+/*Clear floats after image containers*/
+.row {
+  display:flex;
+}
+.column  {
+  width: 25%;
   padding: 5px;
 }
 
-Clear floats after image containers
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-*/
-
+.picture1
 
 /***** Styling for all pages *****/
 /*
