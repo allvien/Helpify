@@ -115,27 +115,27 @@ font-size: 20px;
 
 }
 
+.orgh2{
+color: #004369;
+font-family: Arial;
+font-size: xxx-large;
+}
+
+.orgh3{
+color: #004369;
+font-family: Arial;
+font-size: x-large;
+}
+
 .bottomtext{
     display: flex;
     padding: 5px;
     margin: 15px;
 }
 
-.text3{
-
-}
-
 .text31{
 padding-right: 30px;
 }
-
-.text32{
-
-}
-
-.text33{
-}
-
 
 .link3{
 color: #004369;
