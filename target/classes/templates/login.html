@@ -11,28 +11,29 @@
 </head>
 <body>
 <header>
+    <img class="logotyp" th:src="'images/HELPIFYy.png'" alt="FöretagsLogo">
     <div class="header1">
+        <th><h1 class="headline">HelpIfy</h1></th>
         <div class="header-text">
             <thead>
-            <th><a href="/helpify">Startsida</a></th>
-            <th><a href="/signup">Bli Medlem</a></th>
-            <th><a href="/organisations">Våra organisationer</a></th>
-            <th><a href="/donation">Donera</a></th>
-            <th><a href="/myPage">Mina sidor</a></th>
+            <th><a href="/helpify">Startsida   </a></th>
+            <th><a href="/signup">Bli Medlem   </a></th>
+            <th><a href="/organisations">Våra organisationer   </a></th>
+            <th><a href="/donation">Donera   </a></th>
+            <th><a href="/myPage">Mina sidor   </a></th>
+            <th th:if="${#httpServletRequest.remoteUser == null}"><a href="/login">Logga in</a></th>
             <th th:if="${#httpServletRequest.remoteUser}"><a href="/logout">Logga ut</a></th>
             <th th:if="${#httpServletRequest.remoteUser}"><p th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p></th>
             </thead>
         </div>
     </div>
 </header>
-</br>
-</br>
-<form action="/login" method="post">
-    <label for="username"> Användarnamn </label>
-    <input type="text" id="username" name="username"/>
-    <label for="password"> Lösenord</label>
-    <input type="password" id="password" name="password"/>
-    <input type="submit" value="Logga in" />
+
+
+<form class="form1" action="/login" method="post">
+    <input class="input1" type="text" id="username" name="username" placeholder="Användarnamn"/>
+    <input class="input1" type="password" id="password" name="password" placeholder="Lösenord"/>
+    <input class="button1" type="submit" value="Logga in" />
 </form>
 
 
