@@ -4,17 +4,6 @@
     <meta charset="UTF-8">
     <title>Donation</title>
     <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'">
-    <div th:if="${session.userName} != null">
-        <p th:if="${#httpServletRequest.remoteUser}" th:text="'Inloggad som: ' + ${session.userName}"></p>
-    </div>
-    <div th:if="${session.userName} == null">
-        <form th:action="@{/login}" method="post">
-            <input type="submit" value="Logga in"/>
-        </form>
-    </div>
-    <form th:action="@{/logout}" method="post">
-        <input type="submit" value="Logga ut"/>
-    </form>
 </head>
 <body>
 <header>
@@ -22,6 +11,9 @@
         <div class="header-text">
             <thead>
             <h1 style="font-size:80px">HELPIFY</h1>
+            <div>
+                <th><p th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p></th>
+            </div>
             <th><a href="/">Startsida</a></th>
             <th><a href="/signup">Bli Medlem</a></th>
             <th><a href="/organisations">Våra organisationer</a></th>
@@ -35,9 +27,7 @@
                     <li><a class="dropdown-item" href="/Inställningar">Inställningar</a></li>
                 </ul>
             </thdiv>
-            <th><a href="/login">Logga in</a></th>
             <th><a href="/logout">Logga ut</a></th>
-            <th><p th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p></th>
             </thead>
         </div>
     </div>

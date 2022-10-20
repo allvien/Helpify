@@ -24,14 +24,14 @@ public class CharityController {
     private DonationService donationService;
 
 
-    @GetMapping("/")
+    @GetMapping("/helpify")
     public String startPage(Model model) {
 
         model.addAttribute("totalSum", donationService.addToTotal());
         return "startPage";
     }
 
-    @PostMapping("/")
+    @PostMapping("/helpify")
     public String startPageAdd(@RequestParam String organisation, @RequestParam int Kr, Model model) {
         List<Organisation> organisations = (List<Organisation>) orgRepo.findAll();
 
