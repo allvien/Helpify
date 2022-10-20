@@ -56,7 +56,7 @@ public class CharityController {
     }
 
     @PostMapping("/donation")
-    public String donationPost(@RequestParam double sum, @RequestParam String[] organisations, Model model, HttpServletRequest request, HttpSession session) {
+    public String donationPost(@RequestParam double sum, @RequestParam String[] organisations, Model model, HttpServletRequest request) {
 
         String userName = request.getRemoteUser();
         donationService.splitDonation(sum, organisations, userName);

@@ -13,7 +13,7 @@
             <thead>
             <h1 style="font-size:80px">HELPIFY</h1>
             <th><a href="/">Startsida</a></th>
-            <th class="dropdown">
+            <!--<th class="dropdown">
                 <a class="btn btn-secondary dropdown-toggle" href="/myPage" role="button" data-bs-toggle="dropdown"
                    aria-expanded="false">
                     Mina sidor</a>
@@ -22,39 +22,37 @@
                     <li><a class="dropdown-item" href="/stats">Mina donationer</a></li>
                     <li><a class="dropdown-item" href="/Inställningar">Inställningar</a></li>
                 </ul>
-            </th>
+            </th>-->
             <th><a href="/login">Logga in</a></th>
-            <th><a href="/logout">Logga ut</a></th>
+            <!--<th><a href="/logout">Logga ut</a></th>
             <th><p th:if="${#httpServletRequest.remoteUser}"
-                   th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p></th>
+                   th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p></th>-->
             </thead>
         </div>
     </div>
 </header>
+<div class="text2">
+<span>Bli medlem och kom igång med dina donationer idag. Enkelt, smidigt och säkert!</span>
+</div>
+<!--Välj hur ofta du vill bidra: veckovis, månatligen, säsongsvis.-->
 
 <div class="formContainer">
-    <form th:action="@{/signup}" method="post" th:object="${user}" class="form">
-        <p th:if="${#fields.hasErrors('firstName')}">Förnamn är inte ifyllt</p>
-        <label for="firstName">Förnamn</label>
-        <input type="text" th:field="*{firstName}" th:errorclass="error" id="firstName"/>
+    <form class="form" th:action="@{/signup}" method="post" th:object="${user}">
+        <p class="error2" th:if="${#fields.hasErrors('firstName')}">Förnamn är inte ifyllt</p>
+        <input class="input2" type="text" th:field="*{firstName}" th:errorclass="error" id="firstName" placeholder="Förnamn"/>
 
-        <p th:if="${#fields.hasErrors('lastName')}">Efternamn är inte ifyllt</p>
-        <label for="lastName">Efternamn</label>
-        <input type="text" th:field="*{lastName}" th:errorclass="error" id="lastName"/>
+        <p class="error2" th:if="${#fields.hasErrors('lastName')}">Efternamn är inte ifyllt</p>
+        <input class="input2" type="text" th:field="*{lastName}" th:errorclass="error" id="lastName" placeholder="Efternamn"/>
 
-        <p th:if="${#fields.hasErrors('email')}">Inkorrekt email</p>
-        <label for="email">Email</label>
-        <input type="email" th:field="*{email}" th:errorclass="error" id="email"/>
+        <input class="input2" type="email" th:field="*{email}" th:errorclass="error" id="email" placeholder="Email"/>
 
-        <p th:if="${#fields.hasErrors('userName')}">Användarnamnet ska vara mellan 4-12 bokstäver</p>
-        <label for="userName">Användarnamn</label>
-        <input type="text" th:field="*{userName}" th:errorclass="error" id="userName"/>
+        <p class="error2" th:if="${#fields.hasErrors('userName')}">Användarnamnet ska vara mellan 4-12 bokstäver</p>
+        <input class="input2" type="text" th:field="*{userName}" th:errorclass="error" id="userName" placeholder="Användarnamn"/>
 
-        <p th:if="${#fields.hasErrors('password')}">Lösenordet ska vara minst 6 tecken</p>
-        <label for="password">Lösenord</label>
-        <input type="password" th:field="*{password}" th:errorclass="error" id="password"/>
+        <p class="error2" th:if="${#fields.hasErrors('password')}">Lösenordet ska vara minst 6 tecken</p>
+        <input class="input2" type="password" th:field="*{password}" th:errorclass="error" id="password" placeholder="Lösenord"/>
 
-        <input type="submit" value="Spara"/>
+        <input class="button2" type="submit" value="Skapa konto"/>
     </form>
 </div>
 
