@@ -153,6 +153,11 @@ font-family: Luminari;
 .orgBox {
 margin: 15px;
 background: white;
+padding: 20 px;
+}
+.donText h4 {
+font-size: 15px;
+color: #004369;
 }
 /*
 .container row col {
