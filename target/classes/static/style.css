@@ -539,6 +539,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: #004369;
+    font-size: larger;
     }
 
 .form {
