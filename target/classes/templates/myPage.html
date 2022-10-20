@@ -59,24 +59,16 @@
 </script>
 <h2> </h2>
 -->
-<p> Vi vill ta en stund för att tacka just Dig</p>
-<p th:text="${#httpServletRequest.remoteUser}"></p>
-<p> för att du är medlem hos oss! För varje månad som du är medlem hos oss
-    så bidrar du till att skapa en bättre och friskare värld för både människor som djur och natur.</p>
+<h5>  Vi vill ta en stund för att tacka just Dig</h5>
+<h5 th:text="${#httpServletRequest.remoteUser}"></h5>
+<h5> för att du är medlem hos oss! För varje månad som du är medlem hos oss
+    så bidrar du till att skapa en bättre och friskare värld för både människor som djur och natur.</h5>
 
 
 <div class="row">
-    <div class="column">
-        <img class="picture1" src="https://tfiglobalnews.com/wp-content/uploads/2021/07/sasadgdG-1024x576.jpg"
-             alt="Människorätt" style="width:100%">
-    </div>
-    <div class="column">
-        <img class="picture1" src="http://ipfactly.com/wp-content/uploads/2015/01/Standing_jaguar1.jpg"
-             alt="Djur och natur" style="width:100%">
-    </div>
-    <div class="column">
-        <img class="picture1" src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-760w,f_auto,q_auto:best/rockcms/2022-02/covid-seattle-childrens-hospital-mc-inline-220202-03-ac61cd.jpg"
-             alt="Läkemedelsforskning" style="width:100%">
+    <div class="row justify-content-around">
+        <div class="col"><img class="Vi bidrar" style="width:70%%" th:src="'images/MypageNew.png'" alt="Bild på vad man kan bidra till">
+        </div>
     </div>
 </div>
 
