@@ -37,13 +37,12 @@
 
 
 <div class="organisationTop">
-    <h1>Nu gör vi världen bättre! </h1>
     <h2>Vilken fråga brinner du för? Vi hjälper dig att hitta de organisationer du vill stötta!</h2>
 </div>
 <div class="container pt-3 text-center">
     <div class="row">
-        <div class="col-6 rounded-4"style="border:5px solid #004369"  th:each="organisation : ${organisations}">
-            <img class="picture" th:src="'images/' + ${organisation.name} + '.png'"> </br>
+       <!-- <div class="col-6 rounded-4"style="border:5px solid #004369"  th:each="organisation : ${organisations}">
+            <img class="picture" th:src="'images/' + ${organisation.name} + '.png'"> </br> -->
 <div class="container text-center ">
     <div class="row row-cols-4 ">
 
@@ -66,7 +65,7 @@
         </div>
     </div>
 </div>
-
+        </div>
 <!-- Site footer -->
 <footer class="site-footer">
     <div class="container">

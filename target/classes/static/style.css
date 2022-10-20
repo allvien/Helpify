@@ -117,12 +117,29 @@ background: linear-gradient(90deg, hsla(277, 79%, 84%, 1) 0%, hsla(204, 95%, 77%
 color: #004369;
 font-family: Luminari;
 text-align: center;
+
+border: solid 5px;
 padding: 5px;
-font-size: 45px;
+border-color: #004369;
+
 }
 
-.giftBox {
-font-size: 20px;
+.button3 {
+font-size: 35px;
+color: #004369;
+font-family: Luminari;
+}
+
+.giftbox {
+font-family: Luminari;
+color: #004369;
+font-size: 15px;
+
+}
+.giftBox h3{
+font-size: 25px;
+color: #004369;
+font-family: Luminari;
 }
 
 .orgBox {
@@ -190,13 +207,13 @@ background-color: #a7d2dd;
 footer {
 background: linear-gradient(90deg, hsla(277, 79%, 84%, 1) 0%, hsla(204, 95%, 77%, 1) 100%);
     padding: 25px;
+    justify-content: center;
     text-align: center;
 }
 
 #footerbtn {
     /* Button for newsletter sign-up in the footer*/
   background: linear-gradient(90deg, hsla(217, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);
-
    text-align: center;
 }
 
