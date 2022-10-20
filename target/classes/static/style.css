@@ -38,26 +38,26 @@ font-size: 10px;
 color: #0E2A36;
 font-family: Arial;
 text-align: center;
- }
+}
 
- h4 {
+h4 {
  font-size: 15px;
  color: #0E2A36;
  font-family: Arial;
  text-align: center;
- }
+}
 h6 {
 font-size: 25px;
  color: #004369;
  font-family: Arial;
  text-align: center;
 }
- p {
+p {
  font-size: 15px;
  color: white;
  font-family: Arial;
  text-align: center;
- }
+}
 
 .header1 {
   background: url('/images/HELPIFYAVL.png');
@@ -97,9 +97,36 @@ color: #004369;
 font-size: 20px;
 }
 
+.toptext{
+
+}
+
+.bottomtext{
+    display: flex;
+    padding: 5px;
+    margin: 15px;
+}
+
 .text3{
 
 }
+
+.text31{
+padding-right: 30px;
+}
+
+.text32{
+
+}
+
+.text33{
+}
+
+
+.link3{
+color: #004369;
+}
+
 
 .sumPres {
 color: #004369;
@@ -270,6 +297,7 @@ Color scheme:
   padding: 5px;
 }
 
+.picture1
 
 /***** Styling for all pages *****/
 /*

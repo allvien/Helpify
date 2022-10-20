@@ -97,12 +97,22 @@ color: #004369;
 font-size: 20px;
 }
 
+.toptext{
+
+}
+
+.bottomtext{
+    display: flex;
+    padding: 5px;
+    margin: 15px;
+}
+
 .text3{
 
 }
 
 .text31{
-
+padding-right: 30px;
 }
 
 .text32{
@@ -112,12 +122,9 @@ font-size: 20px;
 .text33{
 }
 
-.text34{
 
-}
-
-.text35{
-
+.link3{
+color: #004369;
 }
 
 
