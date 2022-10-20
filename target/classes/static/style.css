@@ -102,7 +102,7 @@ padding: 15px;
 }
 
 .totalSum {
-font-size:300px;
+font-size:250px;
 background: linear-gradient(90deg, hsla(277, 79%, 84%, 1) 0%, hsla(204, 95%, 77%, 1) 100%);
 color: #004369;
 font-family: Luminari;
@@ -112,21 +112,29 @@ padding: 5px;
 text-decoration-line: underline;
 }
 
+.dropdown1 h1 {
+color: #004369;
+text-align: center;
+font-size: 35px;
+}
+.dropdown1 h2 {
+color: #004369;
+text-align: center;
+font-size: 20px;
+}
+
 .dropdown1 {
 background: linear-gradient(90deg, hsla(277, 79%, 84%, 1) 0%, hsla(204, 95%, 77%, 1) 100%);
 color: #004369;
 font-family: Luminari;
 text-align: center;
-
-border: solid 5px;
 padding: 5px;
-border-color: #004369;
-
 }
 
 .button3 {
-font-size: 35px;
+font-size: 28px;
 color: #004369;
+background: linear-gradient(90deg, hsla(217, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);
 font-family: Luminari;
 }
 
@@ -144,7 +152,12 @@ font-family: Luminari;
 
 .orgBox {
 margin: 15px;
-background: mintcream;
+background: white;
+padding: 20 px;
+}
+.donText h4 {
+font-size: 15px;
+color: #004369;
 }
 /*
 .container row col {
