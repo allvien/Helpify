@@ -222,6 +222,10 @@ height: 50px;
 font-size: 25px;
 }
 
+.donateButtonActive {
+border-color: #004369;
+}
+
 .donBox {
 width: 40%;
 margin: 15px;
