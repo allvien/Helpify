@@ -17,14 +17,15 @@
         <th><h1 class="headline">HelpIfy</h1></th>
         <div class="header-text">
             <thead>
-            <th><a href="/helpify">Startsida   </a></th>
-            <th><a href="/signup">Bli Medlem   </a></th>
-            <th><a href="/organisations">Våra organisationer   </a></th>
-            <th><a href="/donation">Donera   </a></th>
-            <th><a href="/myPage">Mina sidor   </a></th>
+            <th><a href="/helpify">Startsida </a></th>
+            <th><a href="/signup">Bli Medlem </a></th>
+            <th><a href="/organisations">Våra organisationer </a></th>
+            <th><a href="/donation">Donera </a></th>
+            <th><a href="/myPage">Mina sidor </a></th>
             <th th:if="${#httpServletRequest.remoteUser == null}"><a href="/login">Logga in</a></th>
             <th th:if="${#httpServletRequest.remoteUser}"><a href="/logout">Logga ut</a></th>
-            <th th:if="${#httpServletRequest.remoteUser}"><p th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p></th>
+            <th th:if="${#httpServletRequest.remoteUser}"><p
+                    th:text="${'Inloggad som: ' + #httpServletRequest.remoteUser}"></p></th>
             </thead>
         </div>
     </div>
@@ -36,15 +37,19 @@
             <div class="col-sm">
 
                 <div class="toptext">
-                <p class="text3"> Det finns många sätt du som privatperson kan bidra till att göra världen till en bättre plats. Skänk valfri summa till någon av alla våra organisationer så är du med och bidrar till en ljusare framtid.
-                    Vi arbetar för att underlätta detta för dig, oavsett om du är en van donerare eller om det är första gången!</p>
+                    <p class="text3"> Det finns många sätt du som privatperson kan bidra till att göra världen till en
+                        bättre plats. Skänk valfri summa till någon av alla våra organisationer så är du med och bidrar
+                        till en ljusare framtid.
+                        Vi arbetar för att underlätta detta för dig, oavsett om du är en van donerare eller om det är
+                        första gången!</p>
                 </div>
                 <div class="bottomtext">
-                <span class="text31">Du kanske redan är månadsgivare men letar efter fler organisationer att stötta? Eller kanske du vill donera pengar men inte hittat rätt organisation? Hos oss kan du på ett enkelt sätt samla dina donationer på ett och samma ställe.</span>
+                    <span class="text31">Du kanske redan är månadsgivare men letar efter fler organisationer att stötta? Eller kanske du vill donera pengar men inte hittat rätt organisation? Hos oss kan du på ett enkelt sätt samla dina donationer på ett och samma ställe.</span>
                     <span class="text32"> Vi stöttar organisationer inom läkemedelsforskning, djur, natur och människorätt.
                 Du väljer själv hur mycket och hur ofta du vill donera. Har du inte tid att bli medlem just nu? Använd vår snabbdonation längst ner på sidan. Inget medlemskap krävs!</span>
                 </div>
-                <p class="text33"> För att läsa mer om våra organisationer, klicka <a class="link3" href="/organisations">här</a></p>
+                <p class="text33"> För att läsa mer om våra organisationer, klicka <a class="link3"
+                                                                                      href="/organisations">här</a></p>
 
             </div>
         </div>
@@ -83,38 +88,52 @@
     <div class="dropdown1 container">
         <div class="row">
             <div class="col-sm">
-                <br> <div> <h1>Vill du också vara med och bidra? </h1>
-          <h2>  Vi vet att tiden inte alltid finns. Du kanske inte har tid att skapa ett konto just idag. Genom vår snabbdonation kan du snabbt ge en gåva utan att ha ett medlemskap. Klicka på knappen nedan för att ge ett bidrag till någon av våra tre mest behövande organisationer just nu.
-            </h2></div>
+                <br>
+                <div><h1>Vill du också vara med och bidra? </h1>
+                    <h2> Vi vet att tiden inte alltid finns. Du kanske inte har tid att skapa ett konto just idag. Genom
+                        vår snabbdonation kan du snabbt ge en gåva utan att ha ett medlemskap. Klicka på knappen nedan
+                        för att ge ett bidrag till någon av våra tre mest behövande organisationer just nu.
+                    </h2></div>
                 <button class="dropbtn button3 rounded-1" onclick="quick()">Donera nu!</button>
                 </br></br>
                 <div class="dropdown-content">
                     <div class="row options hide">
-                        <div class="giftBox column" >
+                        <div class="giftBox column">
                             <form action="/helpify" method="POST">
                                 <input type="hidden" name="organisation" value="WWF">
                                 <h3>WWF</h3>
-                                <input type="submit" name="Kr" Value="100" style="background-color:white; border:solid 2px; border-color:#004369;"/>
-                                <input type="submit" name="Kr" Value="250" style="background-color:white; border:solid 2px; border-color:#004369;"/>
-                                <input type="submit" name="Kr" Value="500" style="background-color:white; border:solid 2px; border-color:#004369;"/>
-                            </form></br>
+                                <input type="submit" name="Kr" Value="100"
+                                       style="background-color:white; border:solid 2px; border-color:#004369;"/>
+                                <input type="submit" name="Kr" Value="250"
+                                       style="background-color:white; border:solid 2px; border-color:#004369;"/>
+                                <input type="submit" name="Kr" Value="500"
+                                       style="background-color:white; border:solid 2px; border-color:#004369;"/>
+                            </form>
+                            </br>
                         </div>
                         <div class="giftBox column">
                             <form action="/helpify" method="POST">
                                 <input type="hidden" name="organisation" value="NATURSKYDDSFÖRENINGEN">
                                 <h3>NATURSKYDDSFÖRENINGEN</h3>
-                                <input type="submit" name="Kr" Value="100" style="background-color:white; border:solid 2px; border-color:#004369;"/>
-                                <input type="submit" name="Kr" Value="250" style="background-color:white; border:solid 2px; border-color:#004369;"/>
-                                <input type="submit" name="Kr" Value="500" style="background-color:white; border:solid 2px; border-color:#004369;"/>
-                            </form> </br>
+                                <input type="submit" name="Kr" Value="100"
+                                       style="background-color:white; border:solid 2px; border-color:#004369;"/>
+                                <input type="submit" name="Kr" Value="250"
+                                       style="background-color:white; border:solid 2px; border-color:#004369;"/>
+                                <input type="submit" name="Kr" Value="500"
+                                       style="background-color:white; border:solid 2px; border-color:#004369;"/>
+                            </form>
+                            </br>
                         </div>
                         <div class="giftBox column">
                             <form action="/helpify" method="POST">
                                 <input type="hidden" name="organisation" value="RESCUE">
                                 <h3>RESCUE</h3>
-                                <input type="submit" name="Kr" Value="100" style="background-color:white; border:solid 2px; border-color:#004369;"/>
-                                <input type="submit" name="Kr" Value="250" style="background-color:white; border:solid 2px;border-color:#004369;"/>
-                                <input type="submit" name="Kr" Value="500" style="background-color:white; border:solid 2px; border-color:#004369;"/>
+                                <input type="submit" name="Kr" Value="100"
+                                       style="background-color:white; border:solid 2px; border-color:#004369;"/>
+                                <input type="submit" name="Kr" Value="250"
+                                       style="background-color:white; border:solid 2px;border-color:#004369;"/>
+                                <input type="submit" name="Kr" Value="500"
+                                       style="background-color:white; border:solid 2px; border-color:#004369;"/>
                             </form>
                         </div>
                     </div>

@@ -55,7 +55,7 @@ public class OrganisationController {
                 donationRepo.save(d);
                 model.addAttribute("totalSum", donationService.addToTotal());
 
-                return "redirect:/";
+                return "redirect:/helpify";
             }
         }
 
