@@ -72,7 +72,7 @@ p {
   font:Luminari;
   color: #004369;
   padding-bottom: 25px;
-  border-bottom:5px;
+  border-bottom: solid 5px;
 }
 .headline {
  position:relative;
@@ -513,6 +513,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    left:500px;
 }
 
 .input1{
